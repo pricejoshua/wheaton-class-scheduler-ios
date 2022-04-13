@@ -8,6 +8,6 @@ target 'WheatonClassScheduler' do
   use_frameworks!
 
   # Pods for WheatonClassScheduler
-  pod 'JTAppleCalendar'
+  pod 'CalendarKit'
 
 end
