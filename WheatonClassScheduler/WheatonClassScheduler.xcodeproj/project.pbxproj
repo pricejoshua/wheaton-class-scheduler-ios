@@ -8,28 +8,51 @@
 
 /* Begin PBXBuildFile section */
 		8C1A61C133A39B9034396B4C /* Pods_WheatonClassScheduler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E3B48F63294CA0609C275C /* Pods_WheatonClassScheduler.framework */; };
-		C8647F1827F37A5000930029 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8647F1727F37A5000930029 /* DateCell.swift */; };
-		C8CFA57A27DFBBAE00C0D709 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CFA57927DFBBAE00C0D709 /* AppDelegate.swift */; };
-		C8CFA57C27DFBBAE00C0D709 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CFA57B27DFBBAE00C0D709 /* SceneDelegate.swift */; };
-		C8CFA58127DFBBAE00C0D709 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8CFA57F27DFBBAE00C0D709 /* Main.storyboard */; };
-		C8CFA58327DFBBB000C0D709 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8CFA58227DFBBB000C0D709 /* Assets.xcassets */; };
-		C8CFA58627DFBBB000C0D709 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8CFA58427DFBBB000C0D709 /* LaunchScreen.storyboard */; };
-		C8E73F9E27F78DBF0068B533 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E73F9D27F78DBF0068B533 /* DateExtension.swift */; };
+		C8535749280754E400EF12C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C853572E280754E400EF12C9 /* Assets.xcassets */; };
+		C853574A280754E400EF12C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C853572F280754E400EF12C9 /* LaunchScreen.storyboard */; };
+		C853574B280754E400EF12C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8535731280754E400EF12C9 /* Main.storyboard */; };
+		C853574C280754E400EF12C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535734280754E400EF12C9 /* ViewController.swift */; };
+		C853574D280754E400EF12C9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535735280754E400EF12C9 /* MainViewController.swift */; };
+		C853574E280754E400EF12C9 /* ClassData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535737280754E400EF12C9 /* ClassData.swift */; };
+		C853574F280754E400EF12C9 /* JSONStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535739280754E400EF12C9 /* JSONStructure.swift */; };
+		C8535750280754E400EF12C9 /* SectionStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C853573A280754E400EF12C9 /* SectionStructure.swift */; };
+		C8535751280754E400EF12C9 /* ClassStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C853573B280754E400EF12C9 /* ClassStructure.swift */; };
+		C8535752280754E400EF12C9 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C853573D280754E400EF12C9 /* SectionModel.swift */; };
+		C8535753280754E400EF12C9 /* CoursesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C853573E280754E400EF12C9 /* CoursesModel.swift */; };
+		C8535754280754E400EF12C9 /* ClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C853573F280754E400EF12C9 /* ClassModel.swift */; };
+		C8535755280754E400EF12C9 /* CourseStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535740280754E400EF12C9 /* CourseStructure.swift */; };
+		C8535756280754E400EF12C9 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535742280754E400EF12C9 /* DateExtension.swift */; };
+		C8535757280754E400EF12C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535743280754E400EF12C9 /* AppDelegate.swift */; };
+		C8535758280754E400EF12C9 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535745280754E400EF12C9 /* DateExtension.swift */; };
+		C8535759280754E400EF12C9 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535746280754E400EF12C9 /* Macros.swift */; };
+		C853575A280754E400EF12C9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8535747280754E400EF12C9 /* Info.plist */; };
+		C853575B280754E400EF12C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535748280754E400EF12C9 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F1DC14CBB759F179BDD8BA4 /* Pods-WheatonClassScheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheatonClassScheduler.debug.xcconfig"; path = "Target Support Files/Pods-WheatonClassScheduler/Pods-WheatonClassScheduler.debug.xcconfig"; sourceTree = "<group>"; };
 		73E3B48F63294CA0609C275C /* Pods_WheatonClassScheduler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WheatonClassScheduler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CDB2F62525DBE19CEE1933F /* Pods-WheatonClassScheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheatonClassScheduler.release.xcconfig"; path = "Target Support Files/Pods-WheatonClassScheduler/Pods-WheatonClassScheduler.release.xcconfig"; sourceTree = "<group>"; };
-		C8647F1727F37A5000930029 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		C853572E280754E400EF12C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C8535730280754E400EF12C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C8535732280754E400EF12C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C8535734280754E400EF12C9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C8535735280754E400EF12C9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C8535737280754E400EF12C9 /* ClassData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassData.swift; sourceTree = "<group>"; };
+		C8535739280754E400EF12C9 /* JSONStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONStructure.swift; sourceTree = "<group>"; };
+		C853573A280754E400EF12C9 /* SectionStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionStructure.swift; sourceTree = "<group>"; };
+		C853573B280754E400EF12C9 /* ClassStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassStructure.swift; sourceTree = "<group>"; };
+		C853573D280754E400EF12C9 /* SectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
+		C853573E280754E400EF12C9 /* CoursesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesModel.swift; sourceTree = "<group>"; };
+		C853573F280754E400EF12C9 /* ClassModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassModel.swift; sourceTree = "<group>"; };
+		C8535740280754E400EF12C9 /* CourseStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseStructure.swift; sourceTree = "<group>"; };
+		C8535742280754E400EF12C9 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		C8535743280754E400EF12C9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C8535745280754E400EF12C9 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		C8535746280754E400EF12C9 /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
+		C8535747280754E400EF12C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8535748280754E400EF12C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C8CFA57627DFBBAE00C0D709 /* WheatonClassScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheatonClassScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8CFA57927DFBBAE00C0D709 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C8CFA57B27DFBBAE00C0D709 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C8CFA58027DFBBAE00C0D709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C8CFA58227DFBBB000C0D709 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C8CFA58527DFBBB000C0D709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C8CFA58727DFBBB000C0D709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C8E73F9D27F78DBF0068B533 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,18 +84,84 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		C8647F1627F37A2C00930029 /* Model */ = {
+		C853572D280754E400EF12C9 /* WheatonClassScheduler */ = {
 			isa = PBXGroup;
 			children = (
-				C8647F1727F37A5000930029 /* DateCell.swift */,
+				C853572E280754E400EF12C9 /* Assets.xcassets */,
+				C853572F280754E400EF12C9 /* LaunchScreen.storyboard */,
+				C8535731280754E400EF12C9 /* Main.storyboard */,
+				C8535733280754E400EF12C9 /* Controller */,
+				C8535736280754E400EF12C9 /* Model */,
+				C8535743280754E400EF12C9 /* AppDelegate.swift */,
+				C8535744280754E400EF12C9 /* Helper */,
+				C8535747280754E400EF12C9 /* Info.plist */,
+				C8535748280754E400EF12C9 /* SceneDelegate.swift */,
+			);
+			path = WheatonClassScheduler;
+			sourceTree = "<group>";
+		};
+		C8535733280754E400EF12C9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C8535734280754E400EF12C9 /* ViewController.swift */,
+				C8535735280754E400EF12C9 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C8535736280754E400EF12C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C8535737280754E400EF12C9 /* ClassData.swift */,
+				C8535738280754E400EF12C9 /* Data Structures */,
+				C853573C280754E400EF12C9 /* Data Models */,
+				C8535740280754E400EF12C9 /* CourseStructure.swift */,
+				C8535741280754E400EF12C9 /* Helper */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C8535738280754E400EF12C9 /* Data Structures */ = {
+			isa = PBXGroup;
+			children = (
+				C8535739280754E400EF12C9 /* JSONStructure.swift */,
+				C853573A280754E400EF12C9 /* SectionStructure.swift */,
+				C853573B280754E400EF12C9 /* ClassStructure.swift */,
+			);
+			path = "Data Structures";
+			sourceTree = "<group>";
+		};
+		C853573C280754E400EF12C9 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				C853573D280754E400EF12C9 /* SectionModel.swift */,
+				C853573E280754E400EF12C9 /* CoursesModel.swift */,
+				C853573F280754E400EF12C9 /* ClassModel.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		C8535741280754E400EF12C9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C8535742280754E400EF12C9 /* DateExtension.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		C8535744280754E400EF12C9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C8535745280754E400EF12C9 /* DateExtension.swift */,
+				C8535746280754E400EF12C9 /* Macros.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		C8CFA56D27DFBBAE00C0D709 = {
 			isa = PBXGroup;
 			children = (
-				C8CFA57827DFBBAE00C0D709 /* WheatonClassScheduler */,
+				C853572D280754E400EF12C9 /* WheatonClassScheduler */,
 				C8CFA57727DFBBAE00C0D709 /* Products */,
 				201D883201A8223383ABC23E /* Pods */,
 				00CF75FBC1345CC13394696A /* Frameworks */,
@@ -85,29 +174,6 @@
 				C8CFA57627DFBBAE00C0D709 /* WheatonClassScheduler.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		C8CFA57827DFBBAE00C0D709 /* WheatonClassScheduler */ = {
-			isa = PBXGroup;
-			children = (
-				C8647F1627F37A2C00930029 /* Model */,
-				C8CFA57927DFBBAE00C0D709 /* AppDelegate.swift */,
-				C8CFA57B27DFBBAE00C0D709 /* SceneDelegate.swift */,
-				C8E73F9C27F78DAC0068B533 /* Helper */,
-				C8CFA57F27DFBBAE00C0D709 /* Main.storyboard */,
-				C8CFA58227DFBBB000C0D709 /* Assets.xcassets */,
-				C8CFA58427DFBBB000C0D709 /* LaunchScreen.storyboard */,
-				C8CFA58727DFBBB000C0D709 /* Info.plist */,
-			);
-			path = WheatonClassScheduler;
-			sourceTree = "<group>";
-		};
-		C8E73F9C27F78DAC0068B533 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				C8E73F9D27F78DBF0068B533 /* DateExtension.swift */,
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,9 +236,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8CFA58627DFBBB000C0D709 /* LaunchScreen.storyboard in Resources */,
-				C8CFA58327DFBBB000C0D709 /* Assets.xcassets in Resources */,
-				C8CFA58127DFBBAE00C0D709 /* Main.storyboard in Resources */,
+				C853575A280754E400EF12C9 /* Info.plist in Resources */,
+				C853574B280754E400EF12C9 /* Main.storyboard in Resources */,
+				C8535749280754E400EF12C9 /* Assets.xcassets in Resources */,
+				C853574A280754E400EF12C9 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,30 +292,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8E73F9E27F78DBF0068B533 /* DateExtension.swift in Sources */,
-				C8CFA57A27DFBBAE00C0D709 /* AppDelegate.swift in Sources */,
-				C8CFA57C27DFBBAE00C0D709 /* SceneDelegate.swift in Sources */,
-				C8647F1827F37A5000930029 /* DateCell.swift in Sources */,
+				C8535757280754E400EF12C9 /* AppDelegate.swift in Sources */,
+				C8535751280754E400EF12C9 /* ClassStructure.swift in Sources */,
+				C853574C280754E400EF12C9 /* ViewController.swift in Sources */,
+				C8535755280754E400EF12C9 /* CourseStructure.swift in Sources */,
+				C8535759280754E400EF12C9 /* Macros.swift in Sources */,
+				C853575B280754E400EF12C9 /* SceneDelegate.swift in Sources */,
+				C8535753280754E400EF12C9 /* CoursesModel.swift in Sources */,
+				C8535758280754E400EF12C9 /* DateExtension.swift in Sources */,
+				C853574F280754E400EF12C9 /* JSONStructure.swift in Sources */,
+				C853574E280754E400EF12C9 /* ClassData.swift in Sources */,
+				C8535756280754E400EF12C9 /* DateExtension.swift in Sources */,
+				C8535750280754E400EF12C9 /* SectionStructure.swift in Sources */,
+				C8535754280754E400EF12C9 /* ClassModel.swift in Sources */,
+				C8535752280754E400EF12C9 /* SectionModel.swift in Sources */,
+				C853574D280754E400EF12C9 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C8CFA57F27DFBBAE00C0D709 /* Main.storyboard */ = {
+		C853572F280754E400EF12C9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C8CFA58027DFBBAE00C0D709 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C8CFA58427DFBBB000C0D709 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C8CFA58527DFBBB000C0D709 /* Base */,
+				C8535730280754E400EF12C9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C8535731280754E400EF12C9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8535732280754E400EF12C9 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
