@@ -15,7 +15,6 @@
 		C80E0E92281742B80044790E /* CourseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E0E90281742B80044790E /* CourseViewCell.swift */; };
 		C80E0E93281742B80044790E /* CourseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C80E0E91281742B80044790E /* CourseViewCell.xib */; };
 		C80E0E95281744FD0044790E /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E0E94281744FD0044790E /* ClassesViewController.swift */; };
-		C80E0E97281748D00044790E /* ClassCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E0E96281748D00044790E /* ClassCollectionView.swift */; };
 		C833D6D42811F59800B391AC /* DefaultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C833D6D32811F59800B391AC /* DefaultViewModel.swift */; };
 		C833D6D72811F60400B391AC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C833D6D52811F60400B391AC /* Extensions.swift */; };
 		C833D6D82811F60400B391AC /* ToastUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C833D6D62811F60400B391AC /* ToastUtil.swift */; };
@@ -24,13 +23,8 @@
 		C853574A280754E400EF12C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C853572F280754E400EF12C9 /* LaunchScreen.storyboard */; };
 		C853574B280754E400EF12C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8535731280754E400EF12C9 /* Main.storyboard */; };
 		C853574D280754E400EF12C9 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535735280754E400EF12C9 /* CalendarViewController.swift */; };
-		C853574E280754E400EF12C9 /* ClassData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535737280754E400EF12C9 /* ClassData.swift */; };
-		C853574F280754E400EF12C9 /* JSONStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535739280754E400EF12C9 /* JSONStructure.swift */; };
-		C8535750280754E400EF12C9 /* SectionStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C853573A280754E400EF12C9 /* SectionStructure.swift */; };
-		C8535751280754E400EF12C9 /* ClassStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C853573B280754E400EF12C9 /* ClassStructure.swift */; };
 		C8535752280754E400EF12C9 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C853573D280754E400EF12C9 /* SectionModel.swift */; };
-		C8535753280754E400EF12C9 /* CoursesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C853573E280754E400EF12C9 /* CoursesModel.swift */; };
-		C8535754280754E400EF12C9 /* ClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C853573F280754E400EF12C9 /* ClassModel.swift */; };
+		C8535753280754E400EF12C9 /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C853573E280754E400EF12C9 /* CourseModel.swift */; };
 		C8535755280754E400EF12C9 /* CourseStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535740280754E400EF12C9 /* CourseStructure.swift */; };
 		C8535757280754E400EF12C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535743280754E400EF12C9 /* AppDelegate.swift */; };
 		C8535758280754E400EF12C9 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535745280754E400EF12C9 /* DateExtension.swift */; };
@@ -49,7 +43,6 @@
 		C80E0E90281742B80044790E /* CourseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewCell.swift; sourceTree = "<group>"; };
 		C80E0E91281742B80044790E /* CourseViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseViewCell.xib; sourceTree = "<group>"; };
 		C80E0E94281744FD0044790E /* ClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesViewController.swift; sourceTree = "<group>"; };
-		C80E0E96281748D00044790E /* ClassCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCollectionView.swift; sourceTree = "<group>"; };
 		C833D6D32811F59800B391AC /* DefaultViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultViewModel.swift; sourceTree = "<group>"; };
 		C833D6D52811F60400B391AC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C833D6D62811F60400B391AC /* ToastUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastUtil.swift; sourceTree = "<group>"; };
@@ -58,13 +51,8 @@
 		C8535730280754E400EF12C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8535732280754E400EF12C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8535735280754E400EF12C9 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		C8535737280754E400EF12C9 /* ClassData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassData.swift; sourceTree = "<group>"; };
-		C8535739280754E400EF12C9 /* JSONStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONStructure.swift; sourceTree = "<group>"; };
-		C853573A280754E400EF12C9 /* SectionStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionStructure.swift; sourceTree = "<group>"; };
-		C853573B280754E400EF12C9 /* ClassStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassStructure.swift; sourceTree = "<group>"; };
 		C853573D280754E400EF12C9 /* SectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
-		C853573E280754E400EF12C9 /* CoursesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesModel.swift; sourceTree = "<group>"; };
-		C853573F280754E400EF12C9 /* ClassModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassModel.swift; sourceTree = "<group>"; };
+		C853573E280754E400EF12C9 /* CourseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
 		C8535740280754E400EF12C9 /* CourseStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseStructure.swift; sourceTree = "<group>"; };
 		C8535743280754E400EF12C9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8535745280754E400EF12C9 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -138,7 +126,6 @@
 				C8535735280754E400EF12C9 /* CalendarViewController.swift */,
 				C80E0E8A28171ED00044790E /* SectionWeekView.swift */,
 				C80E0E94281744FD0044790E /* ClassesViewController.swift */,
-				C80E0E96281748D00044790E /* ClassCollectionView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -148,30 +135,17 @@
 			children = (
 				C833D6D32811F59800B391AC /* DefaultViewModel.swift */,
 				C833D6D92811F75700B391AC /* SectionEvent.swift */,
-				C8535737280754E400EF12C9 /* ClassData.swift */,
-				C8535738280754E400EF12C9 /* Data Structures */,
 				C853573C280754E400EF12C9 /* Data Models */,
 				C8535740280754E400EF12C9 /* CourseStructure.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		C8535738280754E400EF12C9 /* Data Structures */ = {
-			isa = PBXGroup;
-			children = (
-				C8535739280754E400EF12C9 /* JSONStructure.swift */,
-				C853573A280754E400EF12C9 /* SectionStructure.swift */,
-				C853573B280754E400EF12C9 /* ClassStructure.swift */,
-			);
-			path = "Data Structures";
-			sourceTree = "<group>";
-		};
 		C853573C280754E400EF12C9 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
 				C853573D280754E400EF12C9 /* SectionModel.swift */,
-				C853573E280754E400EF12C9 /* CoursesModel.swift */,
-				C853573F280754E400EF12C9 /* ClassModel.swift */,
+				C853573E280754E400EF12C9 /* CourseModel.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -323,7 +297,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8535757280754E400EF12C9 /* AppDelegate.swift in Sources */,
-				C8535751280754E400EF12C9 /* ClassStructure.swift in Sources */,
 				C80E0E8D281724090044790E /* ColumnHeader.swift in Sources */,
 				C833D6D42811F59800B391AC /* DefaultViewModel.swift in Sources */,
 				C8535755280754E400EF12C9 /* CourseStructure.swift in Sources */,
@@ -332,17 +305,12 @@
 				C833D6DA2811F75700B391AC /* SectionEvent.swift in Sources */,
 				C833D6D72811F60400B391AC /* Extensions.swift in Sources */,
 				C80E0E8B28171ED00044790E /* SectionWeekView.swift in Sources */,
-				C80E0E97281748D00044790E /* ClassCollectionView.swift in Sources */,
 				C853575B280754E400EF12C9 /* SceneDelegate.swift in Sources */,
-				C8535753280754E400EF12C9 /* CoursesModel.swift in Sources */,
+				C8535753280754E400EF12C9 /* CourseModel.swift in Sources */,
 				C80E0E92281742B80044790E /* CourseViewCell.swift in Sources */,
 				C80E0E86281716B40044790E /* ClassEventCell.swift in Sources */,
 				C8535758280754E400EF12C9 /* DateExtension.swift in Sources */,
-				C853574F280754E400EF12C9 /* JSONStructure.swift in Sources */,
-				C853574E280754E400EF12C9 /* ClassData.swift in Sources */,
 				C80E0E95281744FD0044790E /* ClassesViewController.swift in Sources */,
-				C8535750280754E400EF12C9 /* SectionStructure.swift in Sources */,
-				C8535754280754E400EF12C9 /* ClassModel.swift in Sources */,
 				C8535752280754E400EF12C9 /* SectionModel.swift in Sources */,
 				C853574D280754E400EF12C9 /* CalendarViewController.swift in Sources */,
 			);
