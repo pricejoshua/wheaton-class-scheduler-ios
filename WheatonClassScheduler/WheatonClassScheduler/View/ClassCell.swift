@@ -1,15 +1,13 @@
 //
-//  EventCell.swift
-//  timegenii
+//  ClassCell.swift
+//  WheatonClassScheduler
 //
-//  Created by Jeff Zhang on 14/9/17.
-//  Copyright © 2017 unimelb. All rights reserved.
+//  Created by Joshua Price on 4/25/22.
 //
 
 import UIKit
-import JZCalendarWeekView
 
-class EventCell: UICollectionViewCell {
+class ClassCell: UICollectionViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -39,5 +37,4 @@ class EventCell: UICollectionViewCell {
         locationLabel.text = event.location
         titleLabel.text = event.title
     }
-
 }

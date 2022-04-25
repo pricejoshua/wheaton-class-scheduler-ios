@@ -14,22 +14,42 @@ class DefaultWeekView: JZBaseWeekView {
     override func registerViewClasses() {
         super.registerViewClasses()
 
-        self.collectionView.register(UINib(nibName: "EventCell", bundle: nil), forCellWithReuseIdentifier: EventCell.className)
+        self.collectionView.register(UINib(nibName: "ClassCell", bundle: nil), forCellWithReuseIdentifier: ClassCell.className)
+        
+        collectionView.register(ColumnHeader.self, forSupplementaryViewOfKind: JZSupplementaryViewKinds.columnHeader, withReuseIdentifier: "ColumnHeader")
+        print(collectionView.registeredSupplementaryClasses)
+
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         print(indexPath.row)
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventCell.className, for: indexPath) as? EventCell,
-            let event = getCurrentEvent(with: indexPath) as? SectionEvent {
-            cell.configureCell(event: event)
-            return cell
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ClassCell.className, for: indexPath) as? ClassCell{
+            if let event = getCurrentEvent(with: indexPath) as? SectionEvent {
+                cell.configureCell(event: event)
+                return cell
+            } else {
+                print("event")
+            }
+        } else {
+            print("cell")
         }
-        preconditionFailure("EventCell and SectionEvent should be casted")
+        preconditionFailure()
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let selectedEvent = getCurrentEvent(with: indexPath) as? DefaultEvent {
-            ToastUtil.toastMessageInTheMiddle(message: selectedEvent.title)
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        var view = UICollectionReusableView()
+
+        switch kind {
+        case JZSupplementaryViewKinds.columnHeader:
+            if let columnHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kind, for: indexPath) as? ColumnHeader {
+                columnHeader.updateView(date: flowLayout.dateForColumnHeader(at: indexPath))
+                view = columnHeader
+            }
+        default:
+            view = super.collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
         }
+        
+        return view
     }
+            
 }

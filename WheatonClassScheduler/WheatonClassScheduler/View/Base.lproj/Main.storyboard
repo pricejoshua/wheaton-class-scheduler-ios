@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ach-rR-mWV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KjN-dg-kL5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CjO-Lc-l6F" customClass="DefaultWeekView" customModule="WheatonClassScheduler" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="10" width="414" height="876"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="798"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -25,7 +25,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="CjO-Lc-l6F" firstAttribute="trailing" secondItem="Ll6-e4-TbX" secondAttribute="trailing" id="79G-zv-Df8"/>
-                            <constraint firstItem="CjO-Lc-l6F" firstAttribute="top" secondItem="8Pe-jX-xjp" secondAttribute="top" constant="10" id="Rby-Sx-ZRx"/>
+                            <constraint firstItem="CjO-Lc-l6F" firstAttribute="top" secondItem="Ll6-e4-TbX" secondAttribute="top" id="8SK-GX-KsX"/>
                             <constraint firstItem="CjO-Lc-l6F" firstAttribute="leading" secondItem="Ll6-e4-TbX" secondAttribute="leading" id="c74-eC-WG5"/>
                             <constraint firstAttribute="bottom" secondItem="CjO-Lc-l6F" secondAttribute="bottom" constant="10" id="gBe-XD-reY"/>
                         </constraints>
@@ -36,6 +36,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Gu-yh-pmf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2742.0289855072465" y="69.642857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0T4-eT-KMn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KjN-dg-kL5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DJD-Ng-pEn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ach-rR-mWV" kind="relationship" relationship="rootViewController" id="X1f-pK-18I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="58P-kS-Smq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1831.8840579710147" y="69.642857142857139"/>
         </scene>
