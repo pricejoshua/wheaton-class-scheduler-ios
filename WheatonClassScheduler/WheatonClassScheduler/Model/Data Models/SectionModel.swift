@@ -9,14 +9,31 @@ import Foundation
 
 struct SectionModel {
     
-    let termID, crn, classID, subject: String
+    let termID, crn, classID, subject, name: String
     let startTime: Date
     let endTime: Date
-    
     let seatsCapacity, seatsRemaining, waitCapacity, waitRemaining: Int
     let profs: [String]
-
     
+    let searchTerms: String
     
+    init(termID: String, crn: String, classID: String, subject: String, name: String, startTime: Date, endTime: Date, seatsCapacity: Int, seatsRemaining: Int, waitCapacity: Int, waitRemaining: Int, profs: [String]) {
+        self.termID = termID
+        self.crn = crn
+        self.classID = classID
+        self.subject = subject
+        self.name = name
+        self.startTime = startTime
+        self.endTime = endTime
+        self.seatsCapacity = seatsCapacity
+        self.seatsRemaining = seatsRemaining
+        self.waitCapacity = waitCapacity
+        self.waitRemaining = waitRemaining
+        self.profs = profs
+        self.searchTerms = subject+" "+classID+name
+        for p in profs {
+            self.searchTerms = self.searchTerms + p
+        }
+    }
     
 }
