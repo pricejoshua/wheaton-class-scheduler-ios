@@ -61,6 +61,10 @@ extension Date {
         return Calendar.current.startOfDay(for: self)
     }
     
+    func add(component: Calendar.Component, value: Int) -> Date {
+        return Calendar.current.date(byAdding: component, value: value, to: self)!
+    }
+    
     var endOfDay: Date {
         let cal = Calendar.current
         var components = DateComponents()

@@ -1,19 +1,19 @@
+////
+////  ClassModel.swift
+////  WheatonClassScheduler
+////
+////  Created by Joshua Price on 4/9/22.
+////
 //
-//  ClassModel.swift
-//  WheatonClassScheduler
+//import Foundation
 //
-//  Created by Joshua Price on 4/9/22.
+//struct ClassStructure: Codable {
+//    let termId: String
+//    let subject: String
+//    let classId: Int
+//    let classAttributes: [String]
+//    let name: String
+//    let minCredits: Int
+//    let maxCredits: Int
+//}
 //
-
-import Foundation
-
-struct ClassStructure: Codable {
-    let termId: String
-    let subject: String
-    let classId: Int
-    let classAttributes: [String]
-    let name: String
-    let minCredits: Int
-    let maxCredits: Int
-}
-

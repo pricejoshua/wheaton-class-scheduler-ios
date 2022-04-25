@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ach-rR-mWV">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Calendar View Controller-->
+        <scene sceneID="Omm-GA-DQe">
+            <objects>
+                <viewController id="ach-rR-mWV" customClass="CalendarViewController" customModule="WheatonClassScheduler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Pe-jX-xjp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CjO-Lc-l6F" customClass="DefaultWeekView" customModule="WheatonClassScheduler" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="10" width="414" height="876"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ll6-e4-TbX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CjO-Lc-l6F" firstAttribute="trailing" secondItem="Ll6-e4-TbX" secondAttribute="trailing" id="79G-zv-Df8"/>
+                            <constraint firstItem="CjO-Lc-l6F" firstAttribute="top" secondItem="8Pe-jX-xjp" secondAttribute="top" constant="10" id="Rby-Sx-ZRx"/>
+                            <constraint firstItem="CjO-Lc-l6F" firstAttribute="leading" secondItem="Ll6-e4-TbX" secondAttribute="leading" id="c74-eC-WG5"/>
+                            <constraint firstAttribute="bottom" secondItem="CjO-Lc-l6F" secondAttribute="bottom" constant="10" id="gBe-XD-reY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OaR-IK-BXK"/>
+                    <connections>
+                        <outlet property="calendarWeekView" destination="CjO-Lc-l6F" id="l1G-xD-b4j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Gu-yh-pmf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1831.8840579710147" y="69.642857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
