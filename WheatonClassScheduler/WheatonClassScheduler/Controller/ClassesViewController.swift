@@ -9,6 +9,7 @@ import UIKit
 
 class ClassesViewController: UIViewController, UISearchBarDelegate, UICollectionViewDataSource {
     
+    var courses = [CourseModel]()
     var sections = [SectionModel]()
     var filteredSections: [SectionModel]!
     
@@ -30,13 +31,23 @@ class ClassesViewController: UIViewController, UISearchBarDelegate, UICollection
     }
     
     func testSections() {
-        sections.append(SectionModel(termID: "202208", crn: "85583", classID: "315", subject: "BITH", name: "Christian Thought", startTime: Date(), endTime: Date(), seatsCapacity: 10, seatsRemaining: 10, waitCapacity: 10, waitRemaining: 10, profs: ["Emily McGowin"]))
-        sections.append(SectionModel(termID: "202208", crn: "88818", classID: "373", subject: "CSCI", name: "Platform-Specific Development", startTime: Date(), endTime: Date(), seatsCapacity: 10, seatsRemaining: 10, waitCapacity: 10, waitRemaining: 10, profs: ["Hyunju Kim", "Stack Overflow"]))
-        
+        var s = [SectionModel]()
+
+        var c = (CourseModel(termID: "202201", subject: "CSCI", classID: "373", name: "iOS Dev", attributes: [], coreqs: [], prereqs: [], sections: []))
         for _ in 0...10 {
-            sections.append(SectionModel(termID: "202208", crn: "88818", classID: "373", subject: "CSCI", name: "Platform-Specific Development", startTime: Date(), endTime: Date(), seatsCapacity: 10, seatsRemaining: 10, waitCapacity: 10, waitRemaining: 10, profs: ["Hyunju Kim", "Stack Overflow"]))
+            s.append(SectionModel(startTime: Date(), endTime: Date(), seatsCapacity: 10, seatsRemaining: 10, waitCapacity: 10, waitRemaining: 10, profs: ["Hyunju Kim", "Stack Overflow"], course: c))
         }
-        print("hh")
+
+        c.addSection(secs: s)
+        courses.append(c)
+    
+        courses.append(CourseModel(termID: "202208", subject: "BITH", classID: "315", name: "Xtian Thought", attributes: ["Core"], coreqs: [], prereqs: [], sections: []).addSection(startTime: Date(), endTime: Date(), seatsCapacity: 10, seatsRemaining: 10, waitCapacity: 10, waitRemaining: 10, profs: ["Emily McGowin"]))
+        
+        for course in courses {
+            for section in course.getSections() {
+                sections.append(section)
+            }
+        }
     }
     
 
