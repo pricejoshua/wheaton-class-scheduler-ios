@@ -30,10 +30,11 @@ struct SectionModel {
         self.waitCapacity = waitCapacity
         self.waitRemaining = waitRemaining
         self.profs = profs
-        self.searchTerms = subject+" "+classID+name
+        var temp = subject+" "+classID+name
         for p in profs {
-            self.searchTerms = self.searchTerms + p
+            temp += temp + p
         }
+        self.searchTerms = temp
     }
     
 }
