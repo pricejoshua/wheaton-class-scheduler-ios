@@ -1,5 +1,5 @@
 //
-//  ClassCell.swift
+//  ClassEventCell.swift
 //  WheatonClassScheduler
 //
 //  Created by Joshua Price on 4/25/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ClassCell: UICollectionViewCell {
+class ClassEventCell: UICollectionViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!

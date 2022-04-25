@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+struct SectionModel {
+    
+    let termID, crn, classID, subject: String
+    let startTime: Date
+    let endTime: Date
+    
+    let seatsCapacity, seatsRemaining, waitCapacity, waitRemaining: Int
+    let profs: [String]
+
+    
+    
+    
+}

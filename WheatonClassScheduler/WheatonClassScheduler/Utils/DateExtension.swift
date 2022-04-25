@@ -16,6 +16,14 @@ extension Date {
         return beginningOfWeek
     }
     
+    var firstDayOfSchoolWeek: Date {
+        return firstDayOfWeek.addDays(1)
+    }
+    
+    var lastDayOfSchoolWeek: Date {
+        return firstDayOfWeek.addDays(5)
+    }
+    
     func addWeeks(_ numWeeks: Int) -> Date {
         var components = DateComponents()
         components.weekOfYear = numWeeks

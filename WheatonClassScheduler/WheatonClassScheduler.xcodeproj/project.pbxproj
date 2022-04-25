@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		8C1A61C133A39B9034396B4C /* Pods_WheatonClassScheduler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E3B48F63294CA0609C275C /* Pods_WheatonClassScheduler.framework */; };
-		C80E0E86281716B40044790E /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E0E84281716B40044790E /* ClassCell.swift */; };
-		C80E0E89281716F30044790E /* ClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C80E0E88281716F30044790E /* ClassCell.xib */; };
+		C80E0E86281716B40044790E /* ClassEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E0E84281716B40044790E /* ClassEventCell.swift */; };
+		C80E0E89281716F30044790E /* ClassEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C80E0E88281716F30044790E /* ClassEventCell.xib */; };
 		C80E0E8B28171ED00044790E /* SectionWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E0E8A28171ED00044790E /* SectionWeekView.swift */; };
 		C80E0E8D281724090044790E /* ColumnHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E0E8C281724090044790E /* ColumnHeader.swift */; };
-		C833D6D22811F58200B391AC /* DefaultWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C833D6D12811F58100B391AC /* DefaultWeekView.swift */; };
+		C80E0E92281742B80044790E /* CourseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E0E90281742B80044790E /* CourseViewCell.swift */; };
+		C80E0E93281742B80044790E /* CourseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C80E0E91281742B80044790E /* CourseViewCell.xib */; };
 		C833D6D42811F59800B391AC /* DefaultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C833D6D32811F59800B391AC /* DefaultViewModel.swift */; };
 		C833D6D72811F60400B391AC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C833D6D52811F60400B391AC /* Extensions.swift */; };
 		C833D6D82811F60400B391AC /* ToastUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C833D6D62811F60400B391AC /* ToastUtil.swift */; };
@@ -20,7 +21,7 @@
 		C8535749280754E400EF12C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C853572E280754E400EF12C9 /* Assets.xcassets */; };
 		C853574A280754E400EF12C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C853572F280754E400EF12C9 /* LaunchScreen.storyboard */; };
 		C853574B280754E400EF12C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8535731280754E400EF12C9 /* Main.storyboard */; };
-		C853574D280754E400EF12C9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535735280754E400EF12C9 /* MainViewController.swift */; };
+		C853574D280754E400EF12C9 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535735280754E400EF12C9 /* CalendarViewController.swift */; };
 		C853574E280754E400EF12C9 /* ClassData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535737280754E400EF12C9 /* ClassData.swift */; };
 		C853574F280754E400EF12C9 /* JSONStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535739280754E400EF12C9 /* JSONStructure.swift */; };
 		C8535750280754E400EF12C9 /* SectionStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C853573A280754E400EF12C9 /* SectionStructure.swift */; };
@@ -39,11 +40,12 @@
 		4F1DC14CBB759F179BDD8BA4 /* Pods-WheatonClassScheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheatonClassScheduler.debug.xcconfig"; path = "Target Support Files/Pods-WheatonClassScheduler/Pods-WheatonClassScheduler.debug.xcconfig"; sourceTree = "<group>"; };
 		73E3B48F63294CA0609C275C /* Pods_WheatonClassScheduler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WheatonClassScheduler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CDB2F62525DBE19CEE1933F /* Pods-WheatonClassScheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheatonClassScheduler.release.xcconfig"; path = "Target Support Files/Pods-WheatonClassScheduler/Pods-WheatonClassScheduler.release.xcconfig"; sourceTree = "<group>"; };
-		C80E0E84281716B40044790E /* ClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
-		C80E0E88281716F30044790E /* ClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassCell.xib; sourceTree = "<group>"; };
+		C80E0E84281716B40044790E /* ClassEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassEventCell.swift; sourceTree = "<group>"; };
+		C80E0E88281716F30044790E /* ClassEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassEventCell.xib; sourceTree = "<group>"; };
 		C80E0E8A28171ED00044790E /* SectionWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionWeekView.swift; sourceTree = "<group>"; };
 		C80E0E8C281724090044790E /* ColumnHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnHeader.swift; sourceTree = "<group>"; };
-		C833D6D12811F58100B391AC /* DefaultWeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultWeekView.swift; sourceTree = "<group>"; };
+		C80E0E90281742B80044790E /* CourseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewCell.swift; sourceTree = "<group>"; };
+		C80E0E91281742B80044790E /* CourseViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseViewCell.xib; sourceTree = "<group>"; };
 		C833D6D32811F59800B391AC /* DefaultViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultViewModel.swift; sourceTree = "<group>"; };
 		C833D6D52811F60400B391AC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C833D6D62811F60400B391AC /* ToastUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastUtil.swift; sourceTree = "<group>"; };
@@ -51,7 +53,7 @@
 		C853572E280754E400EF12C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8535730280754E400EF12C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8535732280754E400EF12C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C8535735280754E400EF12C9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C8535735280754E400EF12C9 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		C8535737280754E400EF12C9 /* ClassData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassData.swift; sourceTree = "<group>"; };
 		C8535739280754E400EF12C9 /* JSONStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONStructure.swift; sourceTree = "<group>"; };
 		C853573A280754E400EF12C9 /* SectionStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionStructure.swift; sourceTree = "<group>"; };
@@ -101,9 +103,11 @@
 			isa = PBXGroup;
 			children = (
 				C8535731280754E400EF12C9 /* Main.storyboard */,
-				C80E0E84281716B40044790E /* ClassCell.swift */,
-				C80E0E88281716F30044790E /* ClassCell.xib */,
+				C80E0E84281716B40044790E /* ClassEventCell.swift */,
+				C80E0E88281716F30044790E /* ClassEventCell.xib */,
 				C80E0E8C281724090044790E /* ColumnHeader.swift */,
+				C80E0E91281742B80044790E /* CourseViewCell.xib */,
+				C80E0E90281742B80044790E /* CourseViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,8 +131,7 @@
 		C8535733280754E400EF12C9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C833D6D12811F58100B391AC /* DefaultWeekView.swift */,
-				C8535735280754E400EF12C9 /* MainViewController.swift */,
+				C8535735280754E400EF12C9 /* CalendarViewController.swift */,
 				C80E0E8A28171ED00044790E /* SectionWeekView.swift */,
 			);
 			path = Controller;
@@ -256,10 +259,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C80E0E89281716F30044790E /* ClassCell.xib in Resources */,
+				C80E0E89281716F30044790E /* ClassEventCell.xib in Resources */,
 				C853574B280754E400EF12C9 /* Main.storyboard in Resources */,
 				C8535749280754E400EF12C9 /* Assets.xcassets in Resources */,
 				C853574A280754E400EF12C9 /* LaunchScreen.storyboard in Resources */,
+				C80E0E93281742B80044790E /* CourseViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,15 +328,15 @@
 				C80E0E8B28171ED00044790E /* SectionWeekView.swift in Sources */,
 				C853575B280754E400EF12C9 /* SceneDelegate.swift in Sources */,
 				C8535753280754E400EF12C9 /* CoursesModel.swift in Sources */,
-				C833D6D22811F58200B391AC /* DefaultWeekView.swift in Sources */,
-				C80E0E86281716B40044790E /* ClassCell.swift in Sources */,
+				C80E0E92281742B80044790E /* CourseViewCell.swift in Sources */,
+				C80E0E86281716B40044790E /* ClassEventCell.swift in Sources */,
 				C8535758280754E400EF12C9 /* DateExtension.swift in Sources */,
 				C853574F280754E400EF12C9 /* JSONStructure.swift in Sources */,
 				C853574E280754E400EF12C9 /* ClassData.swift in Sources */,
 				C8535750280754E400EF12C9 /* SectionStructure.swift in Sources */,
 				C8535754280754E400EF12C9 /* ClassModel.swift in Sources */,
 				C8535752280754E400EF12C9 /* SectionModel.swift in Sources */,
-				C853574D280754E400EF12C9 /* MainViewController.swift in Sources */,
+				C853574D280754E400EF12C9 /* CalendarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
