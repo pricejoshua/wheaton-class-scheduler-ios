@@ -24,6 +24,10 @@ extension Date {
         return firstDayOfWeek.addDays(5)
     }
     
+    func getDayOfWeekByIndex(_ i: Int) -> Date {
+        return firstDayOfWeek.addDays(i)
+    }
+    
     func addWeeks(_ numWeeks: Int) -> Date {
         var components = DateComponents()
         components.weekOfYear = numWeeks

@@ -38,8 +38,7 @@ class ClassesViewController: UIViewController, UISearchBarDelegate, UICollection
             s.append(SectionModel(startTime: Date(), endTime: Date(), seatsCapacity: 10, seatsRemaining: 10, waitCapacity: 10, waitRemaining: 10, profs: ["Hyunju Kim", "Stack Overflow"], course: c))
         }
 
-        c.addSection(secs: s)
-        courses.append(c)
+        courses.append(c.addSections(secs: s))
     
         courses.append(CourseModel(termID: "202208", subject: "BITH", classID: "315", name: "Xtian Thought", attributes: ["Core"], coreqs: [], prereqs: [], sections: []).addSection(startTime: Date(), endTime: Date(), seatsCapacity: 10, seatsRemaining: 10, waitCapacity: 10, waitRemaining: 10, profs: ["Emily McGowin"]))
         

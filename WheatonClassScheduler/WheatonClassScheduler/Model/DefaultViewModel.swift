@@ -14,11 +14,9 @@ class DefaultViewModel: NSObject {
     private let firstDate = Date().add(component: .hour, value: 1)
     private let secondDate = Date().add(component: .day, value: 1)
     private let thirdDate = Date().add(component: .day, value: 2)
-
-    lazy var events = [SectionEvent(id: "0", title: "One", startDate: firstDate, endDate: firstDate.add(component: .hour, value: 1), location: "Melbourne"),
-                       SectionEvent(id: "1", title: "Two", startDate: secondDate, endDate: secondDate.add(component: .hour, value: 4), location: "Sydney"),
-                       SectionEvent(id: "2", title: "Three", startDate: thirdDate, endDate: thirdDate.add(component: .hour, value: 2), location: "Tasmania"),
-                       SectionEvent(id: "3", title: "Four", startDate: thirdDate, endDate: thirdDate.add(component: .hour, value: 26), location: "Canberra")]
+    
+    
+    lazy var events = [SectionEvent(id: "0", title: "T", startDate: Date().getDayOfWeekByIndex(1).add(component: .second, value: 51300), endDate: Date().getDayOfWeekByIndex(1).add(component: .second, value: 55500), location: "BGC")]
 
     lazy var eventsByDate = JZWeekViewHelper.getIntraEventsByDate(originalEvents: events)
 

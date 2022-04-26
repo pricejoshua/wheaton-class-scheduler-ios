@@ -15,6 +15,8 @@
 		C80E0E92281742B80044790E /* CourseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E0E90281742B80044790E /* CourseViewCell.swift */; };
 		C80E0E93281742B80044790E /* CourseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C80E0E91281742B80044790E /* CourseViewCell.xib */; };
 		C80E0E95281744FD0044790E /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E0E94281744FD0044790E /* ClassesViewController.swift */; };
+		C80E0E9B281769B80044790E /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E0E9A281769B80044790E /* CourseData.swift */; };
+		C80E0E9D28176B7E0044790E /* CoursesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E0E9C28176B7E0044790E /* CoursesDataModel.swift */; };
 		C833D6D42811F59800B391AC /* DefaultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C833D6D32811F59800B391AC /* DefaultViewModel.swift */; };
 		C833D6D72811F60400B391AC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C833D6D52811F60400B391AC /* Extensions.swift */; };
 		C833D6D82811F60400B391AC /* ToastUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C833D6D62811F60400B391AC /* ToastUtil.swift */; };
@@ -43,6 +45,8 @@
 		C80E0E90281742B80044790E /* CourseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewCell.swift; sourceTree = "<group>"; };
 		C80E0E91281742B80044790E /* CourseViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseViewCell.xib; sourceTree = "<group>"; };
 		C80E0E94281744FD0044790E /* ClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesViewController.swift; sourceTree = "<group>"; };
+		C80E0E9A281769B80044790E /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
+		C80E0E9C28176B7E0044790E /* CoursesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesDataModel.swift; sourceTree = "<group>"; };
 		C833D6D32811F59800B391AC /* DefaultViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultViewModel.swift; sourceTree = "<group>"; };
 		C833D6D52811F60400B391AC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C833D6D62811F60400B391AC /* ToastUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastUtil.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				C833D6D92811F75700B391AC /* SectionEvent.swift */,
 				C853573C280754E400EF12C9 /* Data Models */,
 				C8535740280754E400EF12C9 /* CourseStructure.swift */,
+				C80E0E9A281769B80044790E /* CourseData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			children = (
 				C853573D280754E400EF12C9 /* SectionModel.swift */,
 				C853573E280754E400EF12C9 /* CourseModel.swift */,
+				C80E0E9C28176B7E0044790E /* CoursesDataModel.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -298,6 +304,8 @@
 			files = (
 				C8535757280754E400EF12C9 /* AppDelegate.swift in Sources */,
 				C80E0E8D281724090044790E /* ColumnHeader.swift in Sources */,
+				C80E0E9B281769B80044790E /* CourseData.swift in Sources */,
+				C80E0E9D28176B7E0044790E /* CoursesDataModel.swift in Sources */,
 				C833D6D42811F59800B391AC /* DefaultViewModel.swift in Sources */,
 				C8535755280754E400EF12C9 /* CourseStructure.swift in Sources */,
 				C8535759280754E400EF12C9 /* Macros.swift in Sources */,

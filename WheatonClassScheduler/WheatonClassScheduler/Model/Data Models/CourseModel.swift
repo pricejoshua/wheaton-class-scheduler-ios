@@ -6,7 +6,12 @@
 //
 
 import Foundation
-struct CourseModel {
+
+protocol CourseModelDelegate {
+    func courseModelDidUpdate()
+}
+
+class CourseModel {
     
     let termID, subject, classID, searchTerms, name: String
     let attributes: [String]
@@ -30,7 +35,7 @@ struct CourseModel {
         return self
     }
     
-    func addSection(secs: [SectionModel]) -> CourseModel {
+    func addSections(secs: [SectionModel]) -> CourseModel {
         for s in secs {
             sections.append(s)
         }
