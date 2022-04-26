@@ -13,12 +13,16 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarWeekView: SectionWeekView!
 
     let viewModel = DefaultViewModel()
+    var courseData = CourseData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("hey")
+        courseData.performRequest(urlString: "")
 
         setupCalendarView()
-        
+        print("hey")
 
     }
 
@@ -44,4 +48,16 @@ extension CalendarViewController: JZBaseViewDelegate {
     func initDateDidChange(_ weekView: JZBaseWeekView, initDate: Date) {
         // updateNaviBarTitle()
     }
+}
+
+extension CalendarViewController: CourseDataDelegate {
+    func courseDataDidUpdate(_ courseData: CourseData, courses: CoursesDataModel) {
+        print("fin")
+    }
+    
+    func courseDataDidFailWithError(error: Error) {
+        print(error)
+    }
+    
+    
 }

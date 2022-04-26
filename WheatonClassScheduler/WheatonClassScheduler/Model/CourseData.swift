@@ -21,7 +21,7 @@ class CourseData {
     let url = "https://raw.githubusercontent.com/pricejoshua/course-catalog-api/master/data/classes.cache.json"
     
     func performRequest(urlString: String) {
-        if let url = URL(string: urlString) {
+        if let url = URL(string: url) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url, completionHandler: handleCompletion(data:response:error:))
            
@@ -51,7 +51,38 @@ class CourseData {
     }
     
     func parseData(courseData: Data) -> CoursesDataModel? {
-        let parsedCourses = try? JSONDecoder().decode(Courses.self, from: courseData)
-        
+        print(courseData)
+        do {
+            let parsedCourses = try JSONDecoder().decode(Courses.self, from: courseData)
+            var courses = [CourseModel]()
+            for c in parsedCourses.wheaton.classes {
+                courses.append(CourseModel(termID: c.termID, subject: c.subject, classID: c.classID, name: c.name, attributes: c.classAttributes, sections: []))
+//                if let foo = array.first(where: {$0.name == "foo"}) {
+//                   // do something with foo
+//                } else {
+//                   // item could not be found
+//                }
+            }
+            var sections = [SectionModel]()
+            var location: String
+            for s in parsedCourses.wheaton.sections {
+                for m in s.meetings {
+                    location = m.meetingWhere
+                    print(m.times.keys)
+                    for (s, t) in m.times {
+                        print(s, t)
+                    }
+                }
+            }
+            
+            print(parsedCourses.wheaton.sections.first?.meetings[0].times)
+            
+            
+            print(parsedCourses.wheaton.sections.first?.meetings)
+            
+        } catch {
+            self.delegate?.courseDataDidFailWithError(error: error)
+        }
+        return nil
     }
 }

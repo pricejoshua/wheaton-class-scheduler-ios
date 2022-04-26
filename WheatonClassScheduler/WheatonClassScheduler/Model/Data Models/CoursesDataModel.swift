@@ -7,5 +7,6 @@
 
 import Foundation
 struct CoursesDataModel {
-    
+    var courses: [CourseModel]
+    var sections: [SectionModel]
 }

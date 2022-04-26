@@ -7,12 +7,18 @@
 
 import Foundation
 
+struct MeetingTime {
+    var dayOfWeek: Int
+    var startTime: Int
+    var endTime: Int
+}
+
 struct SectionModel {
     
-    let startTime: Date
-    let endTime: Date
+    let meetingTimes: [MeetingTime]
     let seatsCapacity, seatsRemaining, waitCapacity, waitRemaining: Int
     let profs: [String]
+    let location: String
     let course: CourseModel
     var name: String{
         get {
@@ -36,14 +42,14 @@ struct SectionModel {
     }
 
     
-    init(startTime: Date, endTime: Date, seatsCapacity: Int, seatsRemaining: Int, waitCapacity: Int, waitRemaining: Int, profs: [String], course: CourseModel) {
-        self.startTime = startTime
-        self.endTime = endTime
+    init(meetingTimes: [MeetingTime], seatsCapacity: Int, seatsRemaining: Int, waitCapacity: Int, waitRemaining: Int, profs: [String], location: String, course: CourseModel) {
+        self.meetingTimes = meetingTimes
         self.seatsCapacity = seatsCapacity
         self.seatsRemaining = seatsRemaining
         self.waitCapacity = waitCapacity
         self.waitRemaining = waitRemaining
         self.profs = profs
+        self.location = location
         self.course = course
     }
     

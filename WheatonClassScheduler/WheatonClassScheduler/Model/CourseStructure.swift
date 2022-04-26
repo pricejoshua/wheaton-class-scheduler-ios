@@ -21,7 +21,8 @@ struct Wheaton: Codable {
 struct Class: Codable {
     let host: Host
     let termID, subject, classID: String
-    let classAttributes: [ClassAttribute]
+//    let classAttributes: [ClassAttribute]
+    let classAttributes: [String]
     let nupath: [JSONAny]
     let desc: Desc
     let prettyURL: String
