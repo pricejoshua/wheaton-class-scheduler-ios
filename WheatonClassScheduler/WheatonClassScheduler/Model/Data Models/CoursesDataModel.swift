@@ -6,7 +6,29 @@
 //
 
 import Foundation
-struct CoursesDataModel {
-    var courses: [CourseModel]
-    var sections: [SectionModel]
+
+class CoursesDataModel {
+    var courses: [CourseModel]!
+    var sections: [SectionModel]!
+    
+    init () {
+        self.courses = [CourseModel]()
+        self.sections = [SectionModel]()
+    }
+    
+    func setCourses(courses: [CourseModel]) {
+        self.courses = courses
+    }
+    
+    func getCourses() -> [CourseModel] {
+        return courses
+    }
+    
+    func getSections() -> [SectionModel] {
+        return sections
+    }
+    
+    func getCourseById(subject: String, classID: String) -> CourseModel? {
+        return courses.first(where: {c in c.subject == subject && c.classID == classID})
+    }
 }

@@ -19,7 +19,7 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        courseData.performRequest()
+        courseData.performRequest()
         setupCalendarView()
 
     }

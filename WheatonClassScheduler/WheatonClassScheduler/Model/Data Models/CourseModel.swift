@@ -11,7 +11,7 @@ protocol CourseModelDelegate {
     func courseModelDidUpdate()
 }
 
-class CourseModel {
+class CourseModel: Codable {
     
     let termID, subject, classID, searchTerms, name: String
     let attributes: [String]

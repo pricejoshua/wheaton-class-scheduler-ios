@@ -5,9 +5,13 @@
 
 import Foundation
 
-// MARK: - Courses
+// MARK: - Welcome
 struct Courses: Codable {
     let wheaton: Wheaton
+
+    enum CodingKeys: String, CodingKey {
+        case wheaton = "wheaton"
+    }
 }
 
 // MARK: - Wheaton
@@ -15,239 +19,114 @@ struct Wheaton: Codable {
     let classes: [Class]
     let sections: [Section]
     let subjects: [String: String]
+
+    enum CodingKeys: String, CodingKey {
+        case classes = "classes"
+        case sections = "sections"
+        case subjects = "subjects"
+    }
 }
 
 // MARK: - Class
 struct Class: Codable {
-    let host: Host
-    let termID, subject, classID: String
-//    let classAttributes: [ClassAttribute]
+    let host: String
+    let termID: String
+    let subject: String
+    let classID: String
     let classAttributes: [String]
     let nupath: [JSONAny]
-    let desc: Desc
+    let desc: String
     let prettyURL: String
     let name: String
     let url: String
     let lastUpdateTime: Int
-    let maxCredits, minCredits: Double
-    let college: College?
+    let maxCredits: Double
+    let minCredits: Double
+    let college: String?
     let feeAmount: Int?
-    let feeDescription: FeeDescription
+    let feeDescription: String
     let prereqs: Prereqs
     let coreqs: Coreqs
-    let optPrereqsFor, prereqsFor: PrereqsFor
+    let optPrereqsFor: PrereqsFor
+    let prereqsFor: PrereqsFor
 
     enum CodingKeys: String, CodingKey {
-        case host
+        case host = "host"
         case termID = "termId"
-        case subject
+        case subject = "subject"
         case classID = "classId"
-        case classAttributes, nupath, desc
+        case classAttributes = "classAttributes"
+        case nupath = "nupath"
+        case desc = "desc"
         case prettyURL = "prettyUrl"
-        case name, url, lastUpdateTime, maxCredits, minCredits, college, feeAmount, feeDescription, prereqs, coreqs, optPrereqsFor, prereqsFor
+        case name = "name"
+        case url = "url"
+        case lastUpdateTime = "lastUpdateTime"
+        case maxCredits = "maxCredits"
+        case minCredits = "minCredits"
+        case college = "college"
+        case feeAmount = "feeAmount"
+        case feeDescription = "feeDescription"
+        case prereqs = "prereqs"
+        case coreqs = "coreqs"
+        case optPrereqsFor = "optPrereqsFor"
+        case prereqsFor = "prereqsFor"
     }
-}
-
-enum ClassAttribute: String, Codable {
-    case advancedIntegrativeSeminarAIS = "Advanced Integrative Seminar  AIS"
-    case appAbstractQuantReasAAQRAAQR = "App Abstract/Quant Reas (AAQR)  AAQR"
-    case capstoneCAP = "Capstone  CAP"
-    case christianThoughtCT = "Christian Thought  CT"
-    case competencyRequirementCOMP = "Competency Requirement  COMP"
-    case diversityInTheUSDUSDUS = "Diversity in the U.S. (DUS)  DUS"
-    case envStudiesBiologyCourseEVSB = "Env Studies: Biology Course  EVSB"
-    case envStudiesGeologyCourseEVSG = "Env Studies: Geology Course  EVSG"
-    case envStudiesSocialSciCourseEVSS = "Env Studies: Social Sci Course  EVSS"
-    case firstYearSeminarFYS = "First Year Seminar  FYS"
-    case generalEducationCourseGNED = "General Education Course  GNED"
-    case globalPerspecHalfGPB = "Global Perspec-Half  GPB"
-    case globalPerspectHalfGPA = "Global Perspect-Half  GPA"
-    case globalPerspectivesGPGP = "Global Perspectives (GP)  GP"
-    case historicalPerspectivesHPHP = "Historical Perspectives (HP)  HP"
-    case historyAmericanHAMR = "History American  HAMR"
-    case languageRequirementLANG = "Language Requirement  LANG"
-    case legacyDiversityCourseDVRS = "Legacy Diversity Course  DVRS"
-    case literaryExplorationsLELE = "Literary Explorations (LE)  LE"
-    case newTestamentNT = "New Testament  NT"
-    case noAttributeInformationAvailable = "No Attribute information available."
-    case oldTestamentOT = "Old Testament  OT"
-    case oralCompetencyORAL = "Oral Competency  ORAL"
-    case partOfSciGEUDExemptionSUPX = "Part of Sci GE UD Exemption  SUPX"
-    case philosophyRationalityClusterPRAT = "Philosophy Rationality Cluster  PRAT"
-    case philosophyReligionClusterPREL = "Philosophy Religion Cluster  PREL"
-    case philosophyValuesClusterPVAL = "Philosophy Values Cluster  PVAL"
-    case philosphclInvestigationsPIPI = "Philosphcl Investigations (PI)  PI"
-    case scienceIssuesPerspectSIPSIP = "Science Issues/Perspect (SIP)  SIP"
-    case scienceLabGenEdSLAB = "Science Lab Gen Ed  SLAB"
-    case scienceUpperDivisionGenEdSUPR = "Science Upper Division Gen Ed  SUPR"
-    case scientificPracticeSPSP = "Scientific Practice (SP)  SP"
-    case sharedCoreSHAR = "Shared Core  SHAR"
-    case socialInquirySISI = "Social Inquiry (SI)  SI"
-    case thematicCoreTHEM = "Thematic Core  THEM"
-    case visualPerformArtsMusicVPAM = "Visual & Perform Arts-Music  VPAM"
-    case visualPerformArtsTheaterVPAT = "Visual & Perform Arts-Theater  VPAT"
-    case visualPerformArtsVisualVPAV = "Visual & Perform Arts-Visual  VPAV"
-    case visualPerformingArtsVPAVPA = "Visual & Performing Arts (VPA)  VPA"
-    case wellnessCompetencyWELL = "Wellness Competency  WELL"
-    case writingCompetencyWRT = "Writing Competency  WRT"
-}
-
-enum College: String, Codable {
-    case hr2 = "HR2"
-    case law = "LAW"
 }
 
 // MARK: - Coreqs
 struct Coreqs: Codable {
-    let type: CoreqsType
+    let type: String
     let values: [CoreqsValue]
-}
 
-enum CoreqsType: String, Codable {
-    case and = "and"
-    case or = "or"
+    enum CodingKeys: String, CodingKey {
+        case type = "type"
+        case values = "values"
+    }
 }
 
 // MARK: - CoreqsValue
 struct CoreqsValue: Codable {
     let classID: String
-    let subject: Subject
+    let subject: String
     let missing: Bool?
 
     enum CodingKeys: String, CodingKey {
         case classID = "classId"
-        case subject, missing
+        case subject = "subject"
+        case missing = "missing"
     }
-}
-
-enum Subject: String, Codable {
-    case ahs = "AHS"
-    case anth = "ANTH"
-    case arch = "ARCH"
-    case art = "ART"
-    case bEc = "B EC"
-    case biol = "BIOL"
-    case bith = "BITH"
-    case cE = "C E"
-    case cfm = "CFM"
-    case chem = "CHEM"
-    case chin = "CHIN"
-    case cmhc = "CMHC"
-    case comm = "COMM"
-    case core = "CORE"
-    case csci = "CSCI"
-    case econ = "ECON"
-    case educ = "EDUC"
-    case engr = "ENGR"
-    case engw = "ENGW"
-    case envr = "ENVR"
-    case flng = "FLNG"
-    case fren = "FREN"
-    case geol = "GEOL"
-    case germ = "GERM"
-    case gps = "GPS"
-    case grek = "GREK"
-    case hdi = "HDI"
-    case hebr = "HEBR"
-    case hesd = "HESD"
-    case hist = "HIST"
-    case hngr = "HNGR"
-    case ids = "IDS"
-    case intr = "INTR"
-    case ir = "IR"
-    case latn = "LATN"
-    case lead = "LEAD"
-    case maft = "MAFT"
-    case math = "MATH"
-    case msci = "MSCI"
-    case mucs = "MUCS"
-    case muep = "MUEP"
-    case mums = "MUMS"
-    case mutc = "MUTC"
-    case neur = "NEUR"
-    case phil = "PHIL"
-    case phys = "PHYS"
-    case psci = "PSCI"
-    case psyc = "PSYC"
-    case reli = "RELI"
-    case sci = "SCI"
-    case soc = "SOC"
-    case span = "SPAN"
-    case ssci = "SSCI"
-    case swel = "SWEL"
-}
-
-enum Desc: String, Codable {
-    case noCourseDescriptionIsAvailable = "No course description is available."
-}
-
-enum FeeDescription: String, Codable {
-    case anatomyPhysCourse = "Anatomy/Phys Course"
-    case artCourseFee = "Art Course Fee"
-    case biologyLabFee = "Biology Lab Fee"
-    case chemistryLabFee = "Chemistry Lab Fee"
-    case communicationsCourseFee = "Communications Course Fee"
-    case communicationsFieldTrip = "Communications Field Trip"
-    case dissertationFee = "Dissertation Fee"
-    case educInstructSupplies = "Educ Instruct Supplies"
-    case educationCourseFee = "Education Course Fee"
-    case educationFieldTrip = "Education Field Trip"
-    case elemMethodsPracticum = "Elem Methods Practicum"
-    case empty = ""
-    case evangelismCourseFee = "Evangelism Course Fee"
-    case foreignLanguageFee = "Foreign Language Fee"
-    case geologyFieldTrip = "Geology Field Trip"
-    case geologyLabFee = "Geology Lab Fee"
-    case gradBibleCompExam = "Grad Bible Comp Exam"
-    case hngrCourseFee = "HNGR Course Fee"
-    case intercultEvangFee = "Intercult/Evang Fee"
-    case maHoneyRockFee = "MA Honey Rock Fee"
-    case mucsCourseFee = "MUCS Course Fee"
-    case muepChamber = "MUEP Chamber"
-    case muepCourseFee = "MUEP Course Fee"
-    case muepLargeEnsemble = "MUEP Large Ensemble"
-    case muipCourseFee = "MUIP Course Fee"
-    case muipLessons101122 = "MUIP Lessons 101-122"
-    case muipLessons201222 = "MUIP Lessons 201-222"
-    case muipLessons401422 = "MUIP Lessons 401-422"
-    case mumsCourseFee = "MUMS Course Fee"
-    case mutcCourseFee = "MUTC Course Fee"
-    case operaMusicTheater = "Opera Music Theater"
-    case physicsLabFee = "Physics Lab Fee"
-    case psychologyCourseFeeDOC = "Psychology Course Fee - DOC"
-    case psychologyCourseFeeMA = "Psychology Course Fee - MA"
-    case psychologyCourseFeeUG = "Psychology Course Fee -UG"
-    case studentTeaching = "Student Teaching"
-    case teacherAidingPracticum = "Teacher Aiding Practicum"
-    case theoriesOfOriginsField = "Theories of Origins Field"
-    case thesisFee = "Thesis Fee"
-    case ugHoneyRockFees = "UG Honey Rock Fees"
-}
-
-enum Host: String, Codable {
-    case wheatonEdu = "wheaton.edu"
 }
 
 // MARK: - PrereqsFor
 struct PrereqsFor: Codable {
     let values: [OptPrereqsForValue]
+
+    enum CodingKeys: String, CodingKey {
+        case values = "values"
+    }
 }
 
 // MARK: - OptPrereqsForValue
 struct OptPrereqsForValue: Codable {
-    let subject: Subject
+    let subject: String
     let classID: String
 
     enum CodingKeys: String, CodingKey {
-        case subject
+        case subject = "subject"
         case classID = "classId"
     }
 }
 
 // MARK: - Prereqs
 struct Prereqs: Codable {
-    let type: CoreqsType
+    let type: String
     let values: [PrereqsValue]
+
+    enum CodingKeys: String, CodingKey {
+        case type = "type"
+        case values = "values"
+    }
 }
 
 enum PrereqsValue: Codable {
@@ -281,14 +160,17 @@ enum PrereqsValue: Codable {
 // MARK: - PurpleValue
 struct PurpleValue: Codable {
     let classID: String?
-    let subject: Subject?
+    let subject: String?
     let missing: Bool?
-    let type: CoreqsType?
+    let type: String?
     let values: [ValueValueUnion]?
 
     enum CodingKeys: String, CodingKey {
         case classID = "classId"
-        case subject, missing, type, values
+        case subject = "subject"
+        case missing = "missing"
+        case type = "type"
+        case values = "values"
     }
 }
 
@@ -322,87 +204,74 @@ enum ValueValueUnion: Codable {
 
 // MARK: - Section
 struct Section: Codable {
-    let host: Host
-    let termID, subject, classID, crn: String
-    let seatsCapacity, seatsRemaining, waitCapacity, waitRemaining: Int
+    let host: String
+    let termID: String
+    let subject: String
+    let classID: String
+    let crn: String
+    let seatsCapacity: Int
+    let seatsRemaining: Int
+    let waitCapacity: Int
+    let waitRemaining: Int
     let lastUpdateTime: Int
-    let classType: ClassType
-    let campus: Campus
+    let classType: String
+    let campus: String
     let honors: Bool
     let url: String
     let profs: [String]
     let meetings: [Meeting]
 
     enum CodingKeys: String, CodingKey {
-        case host
+        case host = "host"
         case termID = "termId"
-        case subject
+        case subject = "subject"
         case classID = "classId"
-        case crn, seatsCapacity, seatsRemaining, waitCapacity, waitRemaining, lastUpdateTime, classType, campus, honors, url, profs, meetings
+        case crn = "crn"
+        case seatsCapacity = "seatsCapacity"
+        case seatsRemaining = "seatsRemaining"
+        case waitCapacity = "waitCapacity"
+        case waitRemaining = "waitRemaining"
+        case lastUpdateTime = "lastUpdateTime"
+        case classType = "classType"
+        case campus = "campus"
+        case honors = "honors"
+        case url = "url"
+        case profs = "profs"
+        case meetings = "meetings"
     }
-}
-
-enum Campus: String, Codable {
-    case blackHillsScienceStation = "Black Hills Science Station"
-    case eliInColorado = "ELI in Colorado"
-    case excavationInIsrael = "Excavation in Israel"
-    case honeyRock = "HoneyRock"
-    case offCampus = "Off-Campus"
-    case onLine = "On-line"
-    case pilgrimageInSantiago = "Pilgrimage in Santiago"
-    case semesterInJerusalem = "Semester in Jerusalem"
-    case wheatonCollege = "Wheaton College"
-    case wheatonInBiblicalLands = "Wheaton in Biblical Lands"
-    case wheatonInChicago = "Wheaton in Chicago"
-    case wheatonInEngland = "Wheaton in England"
-    case wheatonInEurope = "Wheaton in Europe"
-    case wheatonInMexico = "Wheaton in Mexico"
-    case wheatonInSpainLatinAmerica = "Wheaton in Spain/Latin America"
-}
-
-enum ClassType: String, Codable {
-    case comprehensiveExam = "Comprehensive Exam"
-    case crossListedClass = "Cross-listed class"
-    case independStudy = "Independ. Study"
-    case individInstrucLessons = "Individ. Instruc./Lessons"
-    case intensive = "Intensive"
-    case internship = "Internship"
-    case lab = "Lab"
-    case lecture = "Lecture"
-    case lectureLab = "Lecture/Lab"
-    case lectureStudio = "Lecture/Studio"
-    case practicum = "Practicum"
-    case remote = "Remote"
-    case selfPacedTutorial = "Self paced (Tutorial)"
-    case seminar = "Seminar"
-    case studioCourse = "Studio Course"
-    case the2HourSeminar = "2 hour seminar"
-    case the4HourSeminar = "4 hour seminar"
-    case thesis = "Thesis"
 }
 
 // MARK: - Meeting
 struct Meeting: Codable {
-    let startDate, endDate: Int
+    let startDate: Int
+    let endDate: Int
     let meetingWhere: String
-    let type: MeetingType
+    let type: String
     let times: [String: [Time]]
 
     enum CodingKeys: String, CodingKey {
-        case startDate, endDate
+        case startDate = "startDate"
+        case endDate = "endDate"
         case meetingWhere = "where"
-        case type, times
+        case type = "type"
+        case times = "times"
     }
 }
 
 // MARK: - Time
 struct Time: Codable {
-    let start, end: EndUnion
+    let start: End
+    let end: End
+
+    enum CodingKeys: String, CodingKey {
+        case start = "start"
+        case end = "end"
+    }
 }
 
-enum EndUnion: Codable {
-    case enumeration(EndEnum)
+enum End: Codable {
     case integer(Int)
+    case string(String)
 
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
@@ -410,30 +279,22 @@ enum EndUnion: Codable {
             self = .integer(x)
             return
         }
-        if let x = try? container.decode(EndEnum.self) {
-            self = .enumeration(x)
+        if let x = try? container.decode(String.self) {
+            self = .string(x)
             return
         }
-        throw DecodingError.typeMismatch(EndUnion.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for EndUnion"))
+        throw DecodingError.typeMismatch(End.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for End"))
     }
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         switch self {
-        case .enumeration(let x):
-            try container.encode(x)
         case .integer(let x):
+            try container.encode(x)
+        case .string(let x):
             try container.encode(x)
         }
     }
-}
-
-enum EndEnum: String, Codable {
-    case tbd = "TBD"
-}
-
-enum MeetingType: String, Codable {
-    case typeClass = "Class"
 }
 
 // MARK: - Encode/decode helpers

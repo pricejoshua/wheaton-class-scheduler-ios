@@ -32,6 +32,7 @@
 		C8535758280754E400EF12C9 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535745280754E400EF12C9 /* DateExtension.swift */; };
 		C8535759280754E400EF12C9 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535746280754E400EF12C9 /* Macros.swift */; };
 		C853575B280754E400EF12C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535748280754E400EF12C9 /* SceneDelegate.swift */; };
+		C8E6F24D28185DE40036A6A8 /* classes.cache.json in Resources */ = {isa = PBXBuildFile; fileRef = C8E6F24C28185DE30036A6A8 /* classes.cache.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		C8535747280754E400EF12C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8535748280754E400EF12C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C8CFA57627DFBBAE00C0D709 /* WheatonClassScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheatonClassScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E6F24C28185DE30036A6A8 /* classes.cache.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = classes.cache.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				C8535733280754E400EF12C9 /* Controller */,
 				C8535736280754E400EF12C9 /* Model */,
 				C8535743280754E400EF12C9 /* AppDelegate.swift */,
+				C8E6F24C28185DE30036A6A8 /* classes.cache.json */,
 				C8535744280754E400EF12C9 /* Utils */,
 				C8535747280754E400EF12C9 /* Info.plist */,
 				C8535748280754E400EF12C9 /* SceneDelegate.swift */,
@@ -249,6 +252,7 @@
 				C853574B280754E400EF12C9 /* Main.storyboard in Resources */,
 				C8535749280754E400EF12C9 /* Assets.xcassets in Resources */,
 				C853574A280754E400EF12C9 /* LaunchScreen.storyboard in Resources */,
+				C8E6F24D28185DE40036A6A8 /* classes.cache.json in Resources */,
 				C80E0E93281742B80044790E /* CourseViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

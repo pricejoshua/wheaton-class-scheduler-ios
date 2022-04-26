@@ -13,8 +13,10 @@ protocol CourseDataDelegate {
 }
 
 class CourseData {
-    var courseList: [CourseModel]!
-    var sections: [SectionModel]!
+//    var courseList: [CourseModel]!
+//    var sections: [SectionModel]!
+    
+    var coursesDataModel = CoursesDataModel()
     
     var delegate: CourseDataDelegate?
     
@@ -63,17 +65,30 @@ class CourseData {
 //                   // item could not be found
 //                }
             }
+            
+            coursesDataModel.setCourses(courses: courses)
+            
             var sections = [SectionModel]()
             var location: String
             for s in parsedCourses.wheaton.sections {
-                for m in s.meetings {
-                    location = m.meetingWhere
-//                    print(m.times.keys)
-//                    for (s, t) in m.times {
-//                        print(s, t)
-//                    }
+                if s.meetings.count == 1{
+                    location = s.meetings[0].meetingWhere
+                } else {
+                    location = "None"
                 }
+                var meetings = [MeetingTime]()
+                for m in s.meetings {
+                    print(type(of: m.times))
+                    for (day, ts) in m.times {
+                        meetings.append(MeetingTime(dayOfWeek: Int(day)!, startTime: getTime(time: ts[0].start), endTime: getTime(time: ts[0].end)))
+                        print(meetings)
+                    }
+                }
+                sections.append(SectionModel(meetingTimes: meetings, seatsCapacity: s.seatsCapacity, seatsRemaining: s.seatsRemaining, waitCapacity: s.waitCapacity, waitRemaining: s.waitRemaining, profs: s.profs, location: location, crn: s.crn, course: coursesDataModel.getCourseById(subject: s.subject, classID: s.classID)!))
+                print()
             }
+            
+
             
 //            print(parsedCourses.wheaton.sections.first?.meetings[0].times)
 //            
@@ -84,5 +99,16 @@ class CourseData {
             self.delegate?.courseDataDidFailWithError(error: error)
         }
         return nil
+    }
+    
+    func getTime(time: End) -> Int?{
+        var timeToReturn: Int?
+        switch time {
+        case .integer(let t):
+            timeToReturn = t
+        case .string(_):
+            timeToReturn = nil
+        }
+        return timeToReturn
     }
 }

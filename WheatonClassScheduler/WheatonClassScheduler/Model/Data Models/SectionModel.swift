@@ -7,13 +7,29 @@
 
 import Foundation
 
-struct MeetingTime {
+struct MeetingTime: Codable {
+    internal init(dayOfWeek: Int, startTime: Int?, endTime: Int?) {
+        self.dayOfWeek = dayOfWeek
+        if (startTime != nil) {
+            self.startTime = startTime!
+        } else {
+            self.startTime = 0
+        }
+        if (endTime != nil) {
+            self.endTime = endTime!
+        } else {
+            self.endTime = 0
+        }
+    }
+    
     var dayOfWeek: Int
     var startTime: Int
     var endTime: Int
+    
+    
 }
 
-struct SectionModel {
+struct SectionModel: Codable {
     
     let meetingTimes: [MeetingTime]
     let seatsCapacity, seatsRemaining, waitCapacity, waitRemaining: Int
