@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol CourseModelDelegate {
-    func courseModelDidUpdate()
-}
-
 class CourseModel: Codable {
     
     let termID, subject, classID, searchTerms, name: String

@@ -43,7 +43,6 @@
         <!--Classes View Controller-->
         <scene sceneID="xpA-ig-euU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Utg-Qo-2vh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Fmt-Ge-ff3" customClass="ClassesViewController" customModule="WheatonClassScheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mZo-aI-BhT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -98,8 +97,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="classCollectionView" destination="mY1-mc-ilN" id="Muu-1B-k3d"/>
+                        <outlet property="searchBar" destination="lO6-Sm-LcE" id="tYp-zG-9g3"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Utg-Qo-2vh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3574" y="798"/>
         </scene>

@@ -11,10 +11,11 @@ class ClassesViewController: UIViewController {
     
 //    var courses = [CourseModel]()
 //    var sections = [SectionModel]()
-    var courseDataModel = CoursesDataModel()
+    var courseDataModel = CoursesDataModel.coursesDataModel
     var filteredSections: [SectionModel]!
     
     @IBOutlet weak var classCollectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,8 @@ class ClassesViewController: UIViewController {
         config.backgroundColor = .systemGray
         classCollectionView.collectionViewLayout =
           UICollectionViewCompositionalLayout.list(using: config)
+        
+        searchBar.delegate = self
     }
     
 //    func testSections() {
@@ -68,14 +71,15 @@ class ClassesViewController: UIViewController {
 
 extension ClassesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sections.count
+        return filteredSections.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CourseViewCell.className, for: indexPath) as? CourseViewCell {
-            cell.classNameLabel.text = sections[indexPath.row].name
-            cell.courseIDLabel.text = sections[indexPath.row].subject + sections[indexPath.row].classID
-            cell.profLabel.text = sections[indexPath.row].profs.first
+            let section = filteredSections[indexPath.row]
+            cell.classNameLabel.text = section.name
+            cell.courseIDLabel.text = section.subject + " " + section.classID
+            cell.profLabel.text = section.profs.first
             return cell
         }
         preconditionFailure()
@@ -85,5 +89,28 @@ extension ClassesViewController: UICollectionViewDataSource {
 // MARK: - UISearchBarDelegate
 
 extension ClassesViewController: UISearchBarDelegate {
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        for s in courseDataModel.sections {
+            if s.getSearchTerms().lowercased().contains(searchText.lowercased()) {
+                filteredSections.append(s)
+            }
+        }
+        self.classCollectionView.reloadData()
+    }
 }
+
+
+// MARK: - CourseDataDelegate
+
+extension ClassesViewController: CourseDataDelegate {
+    func courseDataDidUpdate(_ courseData: CourseData) {
+        filteredSections = courseDataModel.sections
+        classCollectionView.reloadData()
+    }
+    
+    func courseDataDidFailWithError(error: Error) {
+        print(error)
+    }
+}
+
+

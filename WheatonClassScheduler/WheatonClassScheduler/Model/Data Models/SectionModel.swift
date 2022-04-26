@@ -79,4 +79,8 @@ struct SectionModel: Codable {
         return sectionEvents
     }
     
+    func getSearchTerms() -> String {
+        return course.subject + " " + course.classID + course.attributes + profs + course.name
+    }
+    
 }

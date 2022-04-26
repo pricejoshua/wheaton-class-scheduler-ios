@@ -7,9 +7,12 @@
 
 import Foundation
 
+
 class CoursesDataModel {
     var courses: [CourseModel]!
     var sections: [SectionModel]!
+    
+    static let coursesDataModel = CoursesDataModel()
     
     init () {
         self.courses = [CourseModel]()

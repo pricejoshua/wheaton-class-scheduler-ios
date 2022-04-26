@@ -8,15 +8,13 @@
 import Foundation
 
 protocol CourseDataDelegate {
-    func courseDataDidUpdate (_ courseData: CourseData, courses: CoursesDataModel)
+    func courseDataDidUpdate (_ courseData: CourseData)
     func courseDataDidFailWithError (error: Error)
 }
 
 class CourseData {
-//    var courseList: [CourseModel]!
-//    var sections: [SectionModel]!
     
-    var coursesDataModel = CoursesDataModel()
+    var coursesDataModel = CoursesDataModel.coursesDataModel
     
     var delegate: CourseDataDelegate?
     
@@ -47,7 +45,7 @@ class CourseData {
 //            print(dataString)
 //        }
         if let courses = parseData(courseData: data) {
-            self.delegate?.courseDataDidUpdate(self, courses: courses)
+            self.delegate?.courseDataDidUpdate(self)
         }
         
     }
@@ -88,11 +86,11 @@ class CourseData {
                 print()
             }
             
-
-            
+            coursesDataModel.sections = sections
+            print()
 //            print(parsedCourses.wheaton.sections.first?.meetings[0].times)
 //            
-//            
+//            
 //            print(parsedCourses.wheaton.sections.first?.meetings)
             
         } catch {
