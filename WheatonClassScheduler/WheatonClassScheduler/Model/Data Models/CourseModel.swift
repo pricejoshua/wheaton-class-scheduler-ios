@@ -33,8 +33,8 @@ class CourseModel {
         self.uid = str+String(str.hashValue)
     }
     
-    func addSection(meetingTimes: [MeetingTime], seatsCapacity: Int, seatsRemaining: Int, waitCapacity: Int, waitRemaining: Int, profs: [String], location: String) -> CourseModel{
-        sections.append(SectionModel(meetingTimes: meetingTimes, seatsCapacity: seatsCapacity, seatsRemaining: seatsRemaining, waitCapacity: waitCapacity, waitRemaining: waitRemaining, profs: profs, location: location, course: self))
+    func addSection(meetingTimes: [MeetingTime], seatsCapacity: Int, seatsRemaining: Int, waitCapacity: Int, waitRemaining: Int, profs: [String], location: String, crn: String) -> CourseModel{
+        sections.append(SectionModel(meetingTimes: meetingTimes, seatsCapacity: seatsCapacity, seatsRemaining: seatsRemaining, waitCapacity: waitCapacity, waitRemaining: waitRemaining, profs: profs, location: location, crn: crn, course: self))
         return self
     }
     

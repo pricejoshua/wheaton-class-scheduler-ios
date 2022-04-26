@@ -20,7 +20,7 @@ class CourseData {
     
     let url = "https://raw.githubusercontent.com/pricejoshua/course-catalog-api/master/data/classes.cache.json"
     
-    func performRequest(urlString: String) {
+    func performRequest() {
         if let url = URL(string: url) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url, completionHandler: handleCompletion(data:response:error:))
@@ -68,17 +68,17 @@ class CourseData {
             for s in parsedCourses.wheaton.sections {
                 for m in s.meetings {
                     location = m.meetingWhere
-                    print(m.times.keys)
-                    for (s, t) in m.times {
-                        print(s, t)
-                    }
+//                    print(m.times.keys)
+//                    for (s, t) in m.times {
+//                        print(s, t)
+//                    }
                 }
             }
             
-            print(parsedCourses.wheaton.sections.first?.meetings[0].times)
-            
-            
-            print(parsedCourses.wheaton.sections.first?.meetings)
+//            print(parsedCourses.wheaton.sections.first?.meetings[0].times)
+//            
+//            
+//            print(parsedCourses.wheaton.sections.first?.meetings)
             
         } catch {
             self.delegate?.courseDataDidFailWithError(error: error)

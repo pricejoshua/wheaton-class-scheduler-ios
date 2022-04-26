@@ -18,7 +18,7 @@ struct SectionModel {
     let meetingTimes: [MeetingTime]
     let seatsCapacity, seatsRemaining, waitCapacity, waitRemaining: Int
     let profs: [String]
-    let location: String
+    let location, crn: String
     let course: CourseModel
     var name: String{
         get {
@@ -42,7 +42,7 @@ struct SectionModel {
     }
 
     
-    init(meetingTimes: [MeetingTime], seatsCapacity: Int, seatsRemaining: Int, waitCapacity: Int, waitRemaining: Int, profs: [String], location: String, course: CourseModel) {
+    init(meetingTimes: [MeetingTime], seatsCapacity: Int, seatsRemaining: Int, waitCapacity: Int, waitRemaining: Int, profs: [String], location: String, crn: String, course: CourseModel) {
         self.meetingTimes = meetingTimes
         self.seatsCapacity = seatsCapacity
         self.seatsRemaining = seatsRemaining
@@ -50,7 +50,17 @@ struct SectionModel {
         self.waitRemaining = waitRemaining
         self.profs = profs
         self.location = location
+        self.crn = crn
         self.course = course
+    }
+    
+    func getSectionEvents() -> [SectionEvent]{
+        var sectionEvents = [SectionEvent]()
+        for m in meetingTimes{
+            sectionEvents.append(SectionEvent(id: self.crn, title: course.name, startDate: Date().getDayOfWeekByIndex(m.dayOfWeek).add(component: .second, value: m.startTime), endDate: Date().getDayOfWeekByIndex(m.dayOfWeek).add(component: .second, value: m.endTime), location: location))
+        }
+        
+        return sectionEvents
     }
     
 }

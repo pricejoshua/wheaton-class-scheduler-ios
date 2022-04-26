@@ -15,17 +15,17 @@ class CalendarViewController: UIViewController {
     let viewModel = DefaultViewModel()
     var courseData = CourseData()
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("hey")
-        courseData.performRequest(urlString: "")
-
+//        courseData.performRequest()
         setupCalendarView()
-        print("hey")
 
     }
+    
 
+    
     // Support device orientation change
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         JZWeekViewHelper.viewTransitionHandler(to: size, weekView: calendarWeekView)
@@ -34,9 +34,11 @@ class CalendarViewController: UIViewController {
     private func setupCalendarView() {
         calendarWeekView.baseDelegate = self
 
+        viewModel.testSections()
+        
         // Basic setup
         calendarWeekView.setupCalendar(numOfDays: 5,
-                                       setDate: Date(),
+                                       setDate: Date().firstDayOfSchoolWeek,
                                        allEvents: viewModel.eventsByDate,
                                        scrollType: .pageScroll, scrollableRange: (Date().firstDayOfSchoolWeek, Date().lastDayOfSchoolWeek))
         // Optional
