@@ -34,7 +34,7 @@
 		C8535759280754E400EF12C9 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535746280754E400EF12C9 /* Macros.swift */; };
 		C853575B280754E400EF12C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535748280754E400EF12C9 /* SceneDelegate.swift */; };
 		C875E0C228198D2500FB9569 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875E0C128198D2500FB9569 /* FiltersViewController.swift */; };
-		C875E0C42819934700FB9569 /* TagsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875E0C32819934700FB9569 /* TagsTableViewController.swift */; };
+		C875E0C42819934700FB9569 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875E0C32819934700FB9569 /* TagsViewController.swift */; };
 		C875E0C82819941500FB9569 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875E0C72819941500FB9569 /* TagTableViewCell.swift */; };
 		C8E6F24D28185DE40036A6A8 /* classes.cache.json in Resources */ = {isa = PBXBuildFile; fileRef = C8E6F24C28185DE30036A6A8 /* classes.cache.json */; };
 /* End PBXBuildFile section */
@@ -70,7 +70,7 @@
 		C8535747280754E400EF12C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8535748280754E400EF12C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C875E0C128198D2500FB9569 /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
-		C875E0C32819934700FB9569 /* TagsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsTableViewController.swift; sourceTree = "<group>"; };
+		C875E0C32819934700FB9569 /* TagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
 		C875E0C72819941500FB9569 /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
 		C8CFA57627DFBBAE00C0D709 /* WheatonClassScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheatonClassScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E6F24C28185DE30036A6A8 /* classes.cache.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = classes.cache.json; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 				C80E0E8A28171ED00044790E /* SectionWeekView.swift */,
 				C80E0E94281744FD0044790E /* ClassesViewController.swift */,
 				C875E0C128198D2500FB9569 /* FiltersViewController.swift */,
-				C875E0C32819934700FB9569 /* TagsTableViewController.swift */,
+				C875E0C32819934700FB9569 /* TagsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -330,7 +330,7 @@
 				C80E0E8D281724090044790E /* ColumnHeader.swift in Sources */,
 				C80E0E9B281769B80044790E /* CourseData.swift in Sources */,
 				C80E0E9D28176B7E0044790E /* CoursesDataModel.swift in Sources */,
-				C875E0C42819934700FB9569 /* TagsTableViewController.swift in Sources */,
+				C875E0C42819934700FB9569 /* TagsViewController.swift in Sources */,
 				C833D6D42811F59800B391AC /* DefaultViewModel.swift in Sources */,
 				C875E0C82819941500FB9569 /* TagTableViewCell.swift in Sources */,
 				C8535755280754E400EF12C9 /* CourseStructure.swift in Sources */,

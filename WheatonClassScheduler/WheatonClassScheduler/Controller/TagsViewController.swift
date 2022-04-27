@@ -25,9 +25,15 @@ class TagItem{
   
 }
 
-class TagsTableViewController: UITableViewController {
+protocol TagDataDelegate {
+    func tagsDidChange(tagItems: [TagItem])
+}
+
+class TagsViewController: UIViewController {
     
     var tagItems: [TagItem]!
+    var delegate: TagDataDelegate!
+    @IBOutlet weak var tagTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +46,9 @@ class TagsTableViewController: UITableViewController {
                 print(ti.description)
             }
         }
+        
+        tagTableView.delegate = self
+        tagTableView.dataSource = self
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -48,26 +57,7 @@ class TagsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tagItems.count
-    }
-
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("tv")
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tagItem", for: indexPath)
-        setLabel(cell: cell, item: tagItems[indexPath.row])
-        setCheckmark(cell: cell, item: tagItems[indexPath.row])
-        print(tagItems[indexPath.row].description)
-        return cell
-        
-    }
     
     
     func setCheckmark(cell: UITableViewCell, item: TagItem){
@@ -87,18 +77,21 @@ class TagsTableViewController: UITableViewController {
         }
     }
 
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) {
-            let item = tagItems[indexPath.row]
-            
-            item.toggleChecked()
-            
-            setCheckmark(cell: cell, item: item)
-        }
-        tableView.deselectRow(at: indexPath, animated: true)
+    @IBAction func applyTags(_ sender: UIButton) {
+        delegate?.tagsDidChange(tagItems: tagItems)
+        self.dismiss(animated: true)
     }
     
+    
+    @IBAction func clearTags(_ sender: UIButton) {
+        for tag in tagItems {
+            tag.checked = false
+        }
+        tagTableView.reloadData()
+    }
+    
+
+//
     
     /*
     // Override to support conditional editing of the table view.
@@ -145,4 +138,40 @@ class TagsTableViewController: UITableViewController {
     }
     */
 
+}
+
+// MARK: TableView stuff
+
+extension TagsViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tagItems.count
+    }
+
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("tv")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tagItem", for: indexPath)
+        setLabel(cell: cell, item: tagItems[indexPath.row])
+        setCheckmark(cell: cell, item: tagItems[indexPath.row])
+        print(tagItems[indexPath.row].description)
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            let item = tagItems[indexPath.row]
+
+            item.toggleChecked()
+
+            setCheckmark(cell: cell, item: item)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }

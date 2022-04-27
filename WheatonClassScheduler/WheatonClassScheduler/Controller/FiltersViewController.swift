@@ -10,9 +10,13 @@ import UIKit
 
 class FiltersViewController: UIViewController {
     
+    var filterModel: FiltersSelectedOptions!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -27,5 +31,13 @@ class FiltersViewController: UIViewController {
     }
     */
 
+}
+
+extension FiltersViewController: TagDataDelegate {
+    func tagsDidChange(tagItems: [TagItem]) {
+        print()
+    }
+    
+    
 }
 

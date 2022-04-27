@@ -93,6 +93,7 @@ class CourseData {
             }
             
             coursesDataModel.sections = sections
+            print(coursesDataModel.getTerms(), coursesDataModel.getTermName(term: "202208"))
             print("Done")
 //            print(parsedCourses.wheaton.sections.first?.meetings[0].times)
 //            
