@@ -7,12 +7,17 @@
 
 import UIKit
 
+
+
 class ClassesViewController: UIViewController {
     
 //    var courses = [CourseModel]()
 //    var sections = [SectionModel]()
     var courseDataModel = CoursesDataModel.coursesDataModel
+    var term = "202208"
     var filteredSections = [SectionModel]()
+    
+    var filterOptions: FiltersSelectedOptions!
     
     @IBOutlet weak var classCollectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -32,8 +37,41 @@ class ClassesViewController: UIViewController {
           UICollectionViewCompositionalLayout.list(using: config)
         
         searchBar.delegate = self
-        filteredSections = courseDataModel.getSections()
+        filteredSections = courseDataModel.getSectionsByTerm(term: term)
+        filterOptions = FiltersSelectedOptions(searchBy: SearchOptions(subject: false, classID: false, course: false, profs: false, name: true), tags: [], term: "202208")
     }
+    
+    func changeTerms(term: String) {
+        self.term = term
+    }
+    
+    func filter() {
+        if let searchText = searchBar.text {
+            filteredSections = []
+            for s in courseDataModel.getSectionsByTerm(term: term) {
+                if s.getSearchTerms(searchOptions: filterOptions.searchBy).lowercased().contains(searchText.lowercased()) {
+                    filteredSections.append(s)
+                }
+            }
+        } else {
+            filteredSections = courseDataModel.getSectionsByTerm(term: term)
+        }
+        if filterOptions.tags.count != 0 {
+            let temp = filteredSections
+            filteredSections = []
+            for s in temp {
+                var add = false
+                for tag in filterOptions.tags{
+                    if s.getAttributes().contains(tag) {
+                        add = true
+                    }
+                }
+                if add {
+                    filteredSections.append(s)
+                }
+            }
+        }
+}
     
 //    func testSections() {
 //        var s = [SectionModel]()
@@ -68,6 +106,7 @@ class ClassesViewController: UIViewController {
     
 }
 
+
 // MARK: - UICollectionView
 
 extension ClassesViewController: UICollectionViewDataSource {
@@ -91,16 +130,7 @@ extension ClassesViewController: UICollectionViewDataSource {
 
 extension ClassesViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText == "" {
-            filteredSections = courseDataModel.sections
-        } else {
-            filteredSections = []
-            for s in courseDataModel.sections {
-                if s.getSearchTerms().lowercased().contains(searchText.lowercased()) {
-                    filteredSections.append(s)
-                }
-            }
-        }
+        filter()
         self.classCollectionView.reloadData()
     }
 }
@@ -110,12 +140,20 @@ extension ClassesViewController: UISearchBarDelegate {
 
 extension ClassesViewController: CourseDataDelegate {
     func courseDataDidUpdate(_ courseData: CourseData) {
-        filteredSections = courseDataModel.sections
+        filteredSections = courseDataModel.getSectionsByTerm(term: term)
         classCollectionView.reloadData()
     }
     
     func courseDataDidFailWithError(error: Error) {
         print(error)
+    }
+}
+
+extension ClassesViewController: FilterOptionsDelegate {
+    func finishUpdate(selectedOptions: FiltersSelectedOptions) {
+        filterOptions = selectedOptions
+        filter()
+        classCollectionView.reloadData()
     }
 }
 

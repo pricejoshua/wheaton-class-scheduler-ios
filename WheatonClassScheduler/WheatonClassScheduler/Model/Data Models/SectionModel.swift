@@ -87,8 +87,34 @@ struct SectionModel: Codable {
         return sectionEvents
     }
     
-    func getSearchTerms() -> String {
-        return course.subject // + " " + course.classID + course.attributes.joined(separator: "") + profs.joined(separator: "") + course.name
+    func getSearchTerms(searchOptions: SearchOptions) -> String {
+        var searchTerms = ""
+        if searchOptions.subject {
+            searchTerms = searchTerms + course.subject
+        }
+        if searchOptions.profs {
+            for p in profs {
+                searchTerms += p
+            }
+        }
+        if searchOptions.classID {
+            searchTerms += course.classID
+        }
+        if searchOptions.course {
+            searchTerms += course.subject + " " + course.classID
+        }
+        if searchOptions.name {
+            searchTerms += course.name
+        }
+        return searchTerms // + " " + course.classID + course.attributes.joined(separator: "") + profs.joined(separator: "") + course.name
+    }
+    
+    func getAttributes() -> String {
+        return course.attributes.joined(separator: " ")
+    }
+    
+    func isTerm(term: String) {
+        
     }
     
 }

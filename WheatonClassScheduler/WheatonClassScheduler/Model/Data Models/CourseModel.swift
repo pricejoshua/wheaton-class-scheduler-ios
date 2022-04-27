@@ -17,6 +17,7 @@ var tags = ClassAttribute.allCases.map({ a -> String in
         return ""
     })
 
+
 class CourseModel: Codable {
     
     let termID, subject, classID, searchTerms, name: String

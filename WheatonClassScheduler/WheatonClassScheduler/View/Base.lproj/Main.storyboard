@@ -142,8 +142,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tagItem" id="2Wd-qe-13q" customClass="TagTableViewCell" customModule="WheatonClassScheduler" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YxD-tC-S5z">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YxD-tC-S5z" id="DVM-XB-Y7L">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFH-Mu-6Uw">
+                                            <rect key="frame" x="333" y="6.5" width="61" height="31"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="filled" title="Apply"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZr-Zb-Ofn">
+                                            <rect key="frame" x="20" y="6.5" width="58" height="31"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Clear"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="DZr-Zb-Ofn" firstAttribute="centerY" secondItem="DVM-XB-Y7L" secondAttribute="centerY" id="9KQ-XU-O4G"/>
+                                        <constraint firstAttribute="trailing" secondItem="uFH-Mu-6Uw" secondAttribute="trailing" constant="20" symbolic="YES" id="KAC-gl-5A6"/>
+                                        <constraint firstItem="uFH-Mu-6Uw" firstAttribute="centerY" secondItem="DVM-XB-Y7L" secondAttribute="centerY" id="Ymo-NR-eqf"/>
+                                        <constraint firstItem="DZr-Zb-Ofn" firstAttribute="leading" secondItem="DVM-XB-Y7L" secondAttribute="leading" constant="20" symbolic="YES" id="v01-PR-Fsa"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tagItem" id="2Wd-qe-13q" customClass="TagTableViewCell" customModule="WheatonClassScheduler" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Wd-qe-13q" id="IXM-ZA-bEs">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>

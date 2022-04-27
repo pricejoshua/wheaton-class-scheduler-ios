@@ -9,29 +9,29 @@ import Foundation
 
 
 class CoursesDataModel {
-    var courses: [CourseModel]!
-    var sections: [SectionModel]!
+    var courses: [String: [CourseModel]]!
+    var sections: [String: [SectionModel]]!
     
     static let coursesDataModel = CoursesDataModel()
     
     init () {
-        self.courses = [CourseModel]()
-        self.sections = [SectionModel]()
+        self.courses = [String: [CourseModel]]()
+        self.sections = [String: [SectionModel]]()
     }
     
-    func setCourses(courses: [CourseModel]) {
+    func setCourses(courses: [String: [CourseModel]]) {
         self.courses = courses
     }
     
-    func getCourses() -> [CourseModel] {
-        return courses
+    func getCourses(term: String) -> [CourseModel] {
+        return courses[term]!
     }
     
-    func getSections() -> [SectionModel] {
-        return sections
+    func getSectionsByTerm(term: String) -> [SectionModel] {
+        return sections[term]!
     }
     
-    func getCourseById(subject: String, classID: String) -> CourseModel? {
-        return courses.first(where: {c in c.subject == subject && c.classID == classID})
+    func getCourseById(term: String, subject: String, classID: String) -> CourseModel? {
+        return courses[term]!.first(where: {c in c.subject == subject && c.classID == classID})
     }
 }

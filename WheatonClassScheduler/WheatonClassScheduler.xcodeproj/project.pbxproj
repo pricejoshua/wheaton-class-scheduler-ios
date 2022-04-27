@@ -17,6 +17,7 @@
 		C80E0E95281744FD0044790E /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E0E94281744FD0044790E /* ClassesViewController.swift */; };
 		C80E0E9B281769B80044790E /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E0E9A281769B80044790E /* CourseData.swift */; };
 		C80E0E9D28176B7E0044790E /* CoursesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80E0E9C28176B7E0044790E /* CoursesDataModel.swift */; };
+		C833831C2819B66100F6CF15 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C833831B2819B66100F6CF15 /* FilterModel.swift */; };
 		C833D6D42811F59800B391AC /* DefaultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C833D6D32811F59800B391AC /* DefaultViewModel.swift */; };
 		C833D6D72811F60400B391AC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C833D6D52811F60400B391AC /* Extensions.swift */; };
 		C833D6D82811F60400B391AC /* ToastUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C833D6D62811F60400B391AC /* ToastUtil.swift */; };
@@ -51,6 +52,7 @@
 		C80E0E94281744FD0044790E /* ClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesViewController.swift; sourceTree = "<group>"; };
 		C80E0E9A281769B80044790E /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
 		C80E0E9C28176B7E0044790E /* CoursesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesDataModel.swift; sourceTree = "<group>"; };
+		C833831B2819B66100F6CF15 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		C833D6D32811F59800B391AC /* DefaultViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultViewModel.swift; sourceTree = "<group>"; };
 		C833D6D52811F60400B391AC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C833D6D62811F60400B391AC /* ToastUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastUtil.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				C853573C280754E400EF12C9 /* Data Models */,
 				C8535740280754E400EF12C9 /* CourseStructure.swift */,
 				C80E0E9A281769B80044790E /* CourseData.swift */,
+				C833831B2819B66100F6CF15 /* FilterModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				C833D6D72811F60400B391AC /* Extensions.swift in Sources */,
 				C80E0E8B28171ED00044790E /* SectionWeekView.swift in Sources */,
 				C853575B280754E400EF12C9 /* SceneDelegate.swift in Sources */,
+				C833831C2819B66100F6CF15 /* FilterModel.swift in Sources */,
 				C8535753280754E400EF12C9 /* CourseModel.swift in Sources */,
 				C80E0E92281742B80044790E /* CourseViewCell.swift in Sources */,
 				C80E0E86281716B40044790E /* ClassEventCell.swift in Sources */,

@@ -15,11 +15,13 @@ class TagItem{
     }
     
     var tag: String
-    var checked: Bool
+    var checked: Bool!
     
     func toggleChecked(){
         checked = !checked
     }
+    
+    public var description: String { return "tag: \(String(describing: tag)) + \(String(checked))"}
   
 }
 
@@ -32,7 +34,11 @@ class TagsTableViewController: UITableViewController {
         
         tagItems = [TagItem]()
         for t in tags {
-            tagItems.append(TagItem(tag: t, checked: false))
+            if t != "" {
+                let ti = TagItem(tag: t, checked: false)
+                tagItems.append(ti)
+                print(ti.description)
+            }
         }
 
         // Uncomment the following line to preserve selection between presentations
@@ -45,21 +51,22 @@ class TagsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tags.count
+        return tagItems.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("tv")
         let cell = tableView.dequeueReusableCell(withIdentifier: "tagItem", for: indexPath)
         setLabel(cell: cell, item: tagItems[indexPath.row])
         setCheckmark(cell: cell, item: tagItems[indexPath.row])
+        print(tagItems[indexPath.row].description)
         return cell
         
-
     }
     
     

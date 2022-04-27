@@ -54,9 +54,12 @@ class CourseData {
         print(courseData)
         do {
             let parsedCourses = try JSONDecoder().decode(Courses.self, from: courseData)
-            var courses = [CourseModel]()
+            var courses = [String: [CourseModel]]()
             for c in parsedCourses.wheaton.classes {
-                courses.append(CourseModel(termID: c.termID, subject: c.subject, classID: c.classID, name: c.name, attributes: c.classAttributes, sections: []))
+                if (courses[c.termID] == nil) {
+                    courses[c.termID] = [CourseModel]()
+                }
+                courses[c.termID]?.append(CourseModel(termID: c.termID, subject: c.subject, classID: c.classID, name: c.name, attributes: c.classAttributes, sections: []))
 //                if let foo = array.first(where: {$0.name == "foo"}) {
 //                   // do something with foo
 //                } else {
@@ -66,7 +69,7 @@ class CourseData {
             
             coursesDataModel.setCourses(courses: courses)
             
-            var sections = [SectionModel]()
+            var sections = [String: [SectionModel]]()
             var location: String
             for s in parsedCourses.wheaton.sections {
                 if s.meetings.count == 1{
@@ -76,18 +79,21 @@ class CourseData {
                 }
                 var meetings = [MeetingTime]()
                 for m in s.meetings {
-                    print(type(of: m.times))
                     for (day, ts) in m.times {
                         meetings.append(MeetingTime(dayOfWeek: Int(day)!, startTime: getTime(time: ts[0].start), endTime: getTime(time: ts[0].end)))
-                        print(meetings)
                     }
                 }
-                sections.append(SectionModel(meetingTimes: meetings, seatsCapacity: s.seatsCapacity, seatsRemaining: s.seatsRemaining, waitCapacity: s.waitCapacity, waitRemaining: s.waitRemaining, profs: s.profs, location: location, crn: s.crn, course: coursesDataModel.getCourseById(subject: s.subject, classID: s.classID)!))
+                if (sections[s.termID] == nil) {
+                    sections[s.termID] = [SectionModel]()
+                }
+                if let course = coursesDataModel.getCourseById(term: s.termID, subject: s.subject, classID: s.classID){
+                    sections[s.termID]?.append(SectionModel(meetingTimes: meetings, seatsCapacity: s.seatsCapacity, seatsRemaining: s.seatsRemaining, waitCapacity: s.waitCapacity, waitRemaining: s.waitRemaining, profs: s.profs, location: location, crn: s.crn, course: course))
+                }
                 print()
             }
             
             coursesDataModel.sections = sections
-            print()
+            print("Done")
 //            print(parsedCourses.wheaton.sections.first?.meetings[0].times)
 //            
 //            
