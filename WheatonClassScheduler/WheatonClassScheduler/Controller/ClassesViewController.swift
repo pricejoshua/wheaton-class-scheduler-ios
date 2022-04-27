@@ -12,7 +12,7 @@ class ClassesViewController: UIViewController {
 //    var courses = [CourseModel]()
 //    var sections = [SectionModel]()
     var courseDataModel = CoursesDataModel.coursesDataModel
-    var filteredSections: [SectionModel]!
+    var filteredSections = [SectionModel]()
     
     @IBOutlet weak var classCollectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -32,6 +32,7 @@ class ClassesViewController: UIViewController {
           UICollectionViewCompositionalLayout.list(using: config)
         
         searchBar.delegate = self
+        filteredSections = courseDataModel.getSections()
     }
     
 //    func testSections() {
@@ -90,9 +91,14 @@ extension ClassesViewController: UICollectionViewDataSource {
 
 extension ClassesViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        for s in courseDataModel.sections {
-            if s.getSearchTerms().lowercased().contains(searchText.lowercased()) {
-                filteredSections.append(s)
+        if searchText == "" {
+            filteredSections = courseDataModel.sections
+        } else {
+            filteredSections = []
+            for s in courseDataModel.sections {
+                if s.getSearchTerms().lowercased().contains(searchText.lowercased()) {
+                    filteredSections.append(s)
+                }
             }
         }
         self.classCollectionView.reloadData()

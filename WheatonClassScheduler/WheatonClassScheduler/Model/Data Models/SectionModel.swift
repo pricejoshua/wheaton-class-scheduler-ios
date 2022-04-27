@@ -26,7 +26,15 @@ struct MeetingTime: Codable {
     var startTime: Int
     var endTime: Int
     
-    
+}
+
+enum searchTerms: Int {
+    case subject
+    case profs
+    case classID
+    case name
+    case attributes
+    case allFields
 }
 
 struct SectionModel: Codable {
@@ -80,7 +88,7 @@ struct SectionModel: Codable {
     }
     
     func getSearchTerms() -> String {
-        return course.subject + " " + course.classID + course.attributes + profs + course.name
+        return course.subject // + " " + course.classID + course.attributes.joined(separator: "") + profs.joined(separator: "") + course.name
     }
     
 }

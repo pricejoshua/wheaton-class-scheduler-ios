@@ -7,6 +7,16 @@
 
 import Foundation
 
+//var tags = ["AIS", "AAQR", "CAP", "CT", "DUS", "EVSB", "EVSG", "EVSS", "FYS", "GNED", "GPB", "GPA", "GP", "HP", "HAMR", "LANG", "DVRS", "LE", "NT", "OT", "PI", "SIP", "SLAB", "SUPR", "SP", "SHAR", "SI", "THEM", "VPAM", "VPAT", "VPAV", "VPA", "WELL", "WRT"]
+
+var tags = ClassAttribute.allCases.map({ a -> String in
+        if a != .noAttributeInformationAvailable {
+            var str = a.rawValue.split(separator: " ").last
+            return String(str!)
+        }
+        return ""
+    })
+
 class CourseModel: Codable {
     
     let termID, subject, classID, searchTerms, name: String

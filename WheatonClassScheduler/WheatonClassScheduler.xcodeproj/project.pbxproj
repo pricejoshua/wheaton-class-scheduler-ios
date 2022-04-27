@@ -32,6 +32,9 @@
 		C8535758280754E400EF12C9 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535745280754E400EF12C9 /* DateExtension.swift */; };
 		C8535759280754E400EF12C9 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535746280754E400EF12C9 /* Macros.swift */; };
 		C853575B280754E400EF12C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535748280754E400EF12C9 /* SceneDelegate.swift */; };
+		C875E0C228198D2500FB9569 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875E0C128198D2500FB9569 /* FiltersViewController.swift */; };
+		C875E0C42819934700FB9569 /* TagsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875E0C32819934700FB9569 /* TagsTableViewController.swift */; };
+		C875E0C82819941500FB9569 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875E0C72819941500FB9569 /* TagTableViewCell.swift */; };
 		C8E6F24D28185DE40036A6A8 /* classes.cache.json in Resources */ = {isa = PBXBuildFile; fileRef = C8E6F24C28185DE30036A6A8 /* classes.cache.json */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +67,9 @@
 		C8535746280754E400EF12C9 /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		C8535747280754E400EF12C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8535748280754E400EF12C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C875E0C128198D2500FB9569 /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
+		C875E0C32819934700FB9569 /* TagsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsTableViewController.swift; sourceTree = "<group>"; };
+		C875E0C72819941500FB9569 /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
 		C8CFA57627DFBBAE00C0D709 /* WheatonClassScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheatonClassScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E6F24C28185DE30036A6A8 /* classes.cache.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = classes.cache.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,11 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				C8535731280754E400EF12C9 /* Main.storyboard */,
-				C80E0E84281716B40044790E /* ClassEventCell.swift */,
-				C80E0E88281716F30044790E /* ClassEventCell.xib */,
+				C875E0C6281993EF00FB9569 /* Cell Views */,
 				C80E0E8C281724090044790E /* ColumnHeader.swift */,
-				C80E0E91281742B80044790E /* CourseViewCell.xib */,
-				C80E0E90281742B80044790E /* CourseViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +136,8 @@
 				C8535735280754E400EF12C9 /* CalendarViewController.swift */,
 				C80E0E8A28171ED00044790E /* SectionWeekView.swift */,
 				C80E0E94281744FD0044790E /* ClassesViewController.swift */,
+				C875E0C128198D2500FB9569 /* FiltersViewController.swift */,
+				C875E0C32819934700FB9569 /* TagsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,6 +173,18 @@
 				C8535746280754E400EF12C9 /* Macros.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		C875E0C6281993EF00FB9569 /* Cell Views */ = {
+			isa = PBXGroup;
+			children = (
+				C80E0E84281716B40044790E /* ClassEventCell.swift */,
+				C80E0E88281716F30044790E /* ClassEventCell.xib */,
+				C80E0E91281742B80044790E /* CourseViewCell.xib */,
+				C80E0E90281742B80044790E /* CourseViewCell.swift */,
+				C875E0C72819941500FB9569 /* TagTableViewCell.swift */,
+			);
+			path = "Cell Views";
 			sourceTree = "<group>";
 		};
 		C8CFA56D27DFBBAE00C0D709 = {
@@ -310,11 +327,14 @@
 				C80E0E8D281724090044790E /* ColumnHeader.swift in Sources */,
 				C80E0E9B281769B80044790E /* CourseData.swift in Sources */,
 				C80E0E9D28176B7E0044790E /* CoursesDataModel.swift in Sources */,
+				C875E0C42819934700FB9569 /* TagsTableViewController.swift in Sources */,
 				C833D6D42811F59800B391AC /* DefaultViewModel.swift in Sources */,
+				C875E0C82819941500FB9569 /* TagTableViewCell.swift in Sources */,
 				C8535755280754E400EF12C9 /* CourseStructure.swift in Sources */,
 				C8535759280754E400EF12C9 /* Macros.swift in Sources */,
 				C833D6D82811F60400B391AC /* ToastUtil.swift in Sources */,
 				C833D6DA2811F75700B391AC /* SectionEvent.swift in Sources */,
+				C875E0C228198D2500FB9569 /* FiltersViewController.swift in Sources */,
 				C833D6D72811F60400B391AC /* Extensions.swift in Sources */,
 				C80E0E8B28171ED00044790E /* SectionWeekView.swift in Sources */,
 				C853575B280754E400EF12C9 /* SceneDelegate.swift in Sources */,

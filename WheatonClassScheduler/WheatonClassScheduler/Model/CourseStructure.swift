@@ -34,6 +34,7 @@ struct Class: Codable {
     let subject: String
     let classID: String
     let classAttributes: [String]
+//    let classAttributes: [ClassAttribute]
     let nupath: [JSONAny]
     let desc: String
     let prettyURL: String
@@ -73,6 +74,52 @@ struct Class: Codable {
         case prereqsFor = "prereqsFor"
     }
 }
+
+enum ClassAttribute: String, Codable, CaseIterable {
+     case advancedIntegrativeSeminarAIS = "Advanced Integrative Seminar  AIS"
+     case appAbstractQuantReasAAQRAAQR = "App Abstract/Quant Reas (AAQR)  AAQR"
+     case capstoneCAP = "Capstone  CAP"
+     case christianThoughtCT = "Christian Thought  CT"
+     case competencyRequirementCOMP = "Competency Requirement  COMP"
+     case diversityInTheUSDUSDUS = "Diversity in the U.S. (DUS)  DUS"
+     case envStudiesBiologyCourseEVSB = "Env Studies: Biology Course  EVSB"
+     case envStudiesGeologyCourseEVSG = "Env Studies: Geology Course  EVSG"
+     case envStudiesSocialSciCourseEVSS = "Env Studies: Social Sci Course  EVSS"
+     case firstYearSeminarFYS = "First Year Seminar  FYS"
+     case generalEducationCourseGNED = "General Education Course  GNED"
+     case globalPerspecHalfGPB = "Global Perspec-Half  GPB"
+     case globalPerspectHalfGPA = "Global Perspect-Half  GPA"
+     case globalPerspectivesGPGP = "Global Perspectives (GP)  GP"
+     case historicalPerspectivesHPHP = "Historical Perspectives (HP)  HP"
+     case historyAmericanHAMR = "History American  HAMR"
+     case languageRequirementLANG = "Language Requirement  LANG"
+     case legacyDiversityCourseDVRS = "Legacy Diversity Course  DVRS"
+     case literaryExplorationsLELE = "Literary Explorations (LE)  LE"
+     case newTestamentNT = "New Testament  NT"
+     case noAttributeInformationAvailable = "No Attribute information available."
+     case oldTestamentOT = "Old Testament  OT"
+     case oralCompetencyORAL = "Oral Competency  ORAL"
+     case partOfSciGEUDExemptionSUPX = "Part of Sci GE UD Exemption  SUPX"
+     case philosophyRationalityClusterPRAT = "Philosophy Rationality Cluster  PRAT"
+     case philosophyReligionClusterPREL = "Philosophy Religion Cluster  PREL"
+     case philosophyValuesClusterPVAL = "Philosophy Values Cluster  PVAL"
+     case philosphclInvestigationsPIPI = "Philosphcl Investigations (PI)  PI"
+     case scienceIssuesPerspectSIPSIP = "Science Issues/Perspect (SIP)  SIP"
+     case scienceLabGenEdSLAB = "Science Lab Gen Ed  SLAB"
+     case scienceUpperDivisionGenEdSUPR = "Science Upper Division Gen Ed  SUPR"
+     case scientificPracticeSPSP = "Scientific Practice (SP)  SP"
+     case sharedCoreSHAR = "Shared Core  SHAR"
+     case socialInquirySISI = "Social Inquiry (SI)  SI"
+     case thematicCoreTHEM = "Thematic Core  THEM"
+     case visualPerformArtsMusicVPAM = "Visual & Perform Arts-Music  VPAM"
+     case visualPerformArtsTheaterVPAT = "Visual & Perform Arts-Theater  VPAT"
+     case visualPerformArtsVisualVPAV = "Visual & Perform Arts-Visual  VPAV"
+     case visualPerformingArtsVPAVPA = "Visual & Performing Arts (VPA)  VPA"
+     case wellnessCompetencyWELL = "Wellness Competency  WELL"
+     case writingCompetencyWRT = "Writing Competency  WRT"
+ }
+
+
 
 // MARK: - Coreqs
 struct Coreqs: Codable {

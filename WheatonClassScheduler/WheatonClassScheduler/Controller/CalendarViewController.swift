@@ -53,7 +53,7 @@ extension CalendarViewController: JZBaseViewDelegate {
 }
 
 extension CalendarViewController: CourseDataDelegate {
-    func courseDataDidUpdate(_ courseData: CourseData, courses: CoursesDataModel) {
+    func courseDataDidUpdate(_ courseData: CourseData) {
         print("fin")
     }
     
