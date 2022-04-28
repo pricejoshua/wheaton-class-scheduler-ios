@@ -37,9 +37,10 @@ class CalendarViewController: UIViewController {
 //        viewModel.testSections()
         
         var events = [SectionEvent]()
-        
-        for selected in CoursesDataModel.coursesDataModel.selectedSections {
-            events.append(contentsOf: coursesDataModel.getSections()[selected].getSectionEvents())
+        for s in coursesDataModel.getSections().filter({ sec in
+            return sec.selected
+        }) {
+            events.append(contentsOf: s.getSectionEvents())
         }
         
         let eventsByDate = JZWeekViewHelper.getIntraEventsByDate(originalEvents: events)

@@ -27,6 +27,7 @@ class ClassesViewController: UIViewController {
         // Do any additional setup after loading the view.
         // testSections()
         classCollectionView.dataSource = self
+        classCollectionView.delegate = self
         
         classCollectionView.register(UINib(nibName: CourseViewCell.className, bundle: .none), forCellWithReuseIdentifier: CourseViewCell.className)
         
@@ -48,14 +49,16 @@ class ClassesViewController: UIViewController {
         if let searchText = searchBar.text {
             if searchText != "" {
                 filteredSections = []
-                for s in courseDataModel.getSectionsByTerm(term: term) {
+                for s in courseDataModel.getSections() {
                     if s.getSearchTerms(searchOptions: filterOptions.searchBy).lowercased().contains(searchText.lowercased()) {
                         filteredSections.append(s)
                     }
                 }
+            } else {
+                filteredSections = courseDataModel.getSections()
             }
         } else {
-            filteredSections = courseDataModel.getSectionsByTerm(term: term)
+            filteredSections = courseDataModel.getSections()
         }
         if filterOptions.tags.count != 0 {
             let temp = filteredSections
@@ -108,9 +111,24 @@ extension ClassesViewController: UICollectionViewDataSource {
             cell.classNameLabel.text = section.name
             cell.courseIDLabel.text = section.subject + " " + section.classID
             cell.profLabel.text = section.profs.first
+            cell.checkLabel.isHidden = !section.selected
             return cell
         }
         preconditionFailure()
+    }
+}
+
+extension ClassesViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? CourseViewCell {
+            filteredSections[indexPath.item].toggleSelected()
+            print(filteredSections[indexPath.item].selected)
+            cell.checkLabel.isHidden = !filteredSections[indexPath.item].selected
+            
+        }
+        print("hello", indexPath.item, filteredSections[indexPath.item])
+        
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
 }
 

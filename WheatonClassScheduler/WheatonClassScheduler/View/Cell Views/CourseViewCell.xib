@@ -21,35 +21,43 @@
                         <rect key="frame" x="10" y="10" width="309" height="187"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="BVX-2g-nEA">
-                                <rect key="frame" x="0.0" y="30" width="309" height="127"/>
+                                <rect key="frame" x="30" y="30" width="249" height="127"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbl-wT-QWg">
-                                        <rect key="frame" x="0.0" y="0.0" width="309" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="249" height="32.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="course id" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdi-lU-bng">
-                                        <rect key="frame" x="0.0" y="47.5" width="309" height="32"/>
+                                        <rect key="frame" x="0.0" y="47.5" width="249" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fy3-ch-qYv">
-                                        <rect key="frame" x="0.0" y="94.5" width="309" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="94.5" width="249" height="32.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="☑️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNv-UQ-4YI">
+                                <rect key="frame" x="265" y="75.5" width="34" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="BVX-2g-nEA" firstAttribute="leading" secondItem="Ogj-eV-gz5" secondAttribute="leading" id="3yb-Gx-g9m"/>
+                            <constraint firstItem="BVX-2g-nEA" firstAttribute="leading" secondItem="Ogj-eV-gz5" secondAttribute="leading" constant="30" id="3yb-Gx-g9m"/>
                             <constraint firstItem="BVX-2g-nEA" firstAttribute="top" secondItem="Ogj-eV-gz5" secondAttribute="top" constant="30" id="MPi-XZ-aR9"/>
                             <constraint firstAttribute="bottom" secondItem="BVX-2g-nEA" secondAttribute="bottom" constant="30" id="T9q-FF-oAx"/>
-                            <constraint firstAttribute="trailing" secondItem="BVX-2g-nEA" secondAttribute="trailing" id="qL4-g1-xHW"/>
+                            <constraint firstAttribute="trailing" secondItem="oNv-UQ-4YI" secondAttribute="trailing" constant="10" id="q5I-u6-IgA"/>
+                            <constraint firstAttribute="trailing" secondItem="BVX-2g-nEA" secondAttribute="trailing" constant="30" id="qL4-g1-xHW"/>
+                            <constraint firstItem="oNv-UQ-4YI" firstAttribute="centerY" secondItem="Ogj-eV-gz5" secondAttribute="centerY" id="rOs-aB-sSA"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -64,6 +72,7 @@
             <size key="customSize" width="329" height="207"/>
             <connections>
                 <outlet property="cellBackgroundView" destination="Ogj-eV-gz5" id="8c7-dd-6k2"/>
+                <outlet property="checkLabel" destination="oNv-UQ-4YI" id="JCz-lk-vys"/>
                 <outlet property="classNameLabel" destination="Kbl-wT-QWg" id="Kyq-Dq-dte"/>
                 <outlet property="courseIDLabel" destination="rdi-lU-bng" id="INI-UC-qDD"/>
                 <outlet property="profLabel" destination="fy3-ch-qYv" id="qGi-fN-eAk"/>

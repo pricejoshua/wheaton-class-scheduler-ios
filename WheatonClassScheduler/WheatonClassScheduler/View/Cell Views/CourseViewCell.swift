@@ -13,7 +13,7 @@ class CourseViewCell: UICollectionViewCell {
     @IBOutlet weak var courseIDLabel: UILabel!
     @IBOutlet weak var profLabel: UILabel!
     @IBOutlet weak var cellBackgroundView: UIView!
-    
+    @IBOutlet weak var checkLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -37,7 +37,9 @@ enum searchTerms: Int {
     case allFields
 }
 
-struct SectionModel: Codable {
+class SectionModel: Codable {
+    
+    
     
     let meetingTimes: [MeetingTime]
     let seatsCapacity, seatsRemaining, waitCapacity, waitRemaining: Int
@@ -64,9 +66,14 @@ struct SectionModel: Codable {
             course.classID
         }
     }
+    var selected: Bool
 
     
-    init(meetingTimes: [MeetingTime], seatsCapacity: Int, seatsRemaining: Int, waitCapacity: Int, waitRemaining: Int, profs: [String], location: String, crn: String, course: CourseModel) {
+    convenience init(meetingTimes: [MeetingTime], seatsCapacity: Int, seatsRemaining: Int, waitCapacity: Int, waitRemaining: Int, profs: [String], location: String, crn: String, course: CourseModel) {
+        self.init(meetingTimes: meetingTimes, seatsCapacity: seatsCapacity, seatsRemaining: seatsRemaining, waitCapacity: waitCapacity, waitRemaining: waitRemaining, profs: profs, location: location, crn: crn, course: course, selected: false)
+    }
+    
+    init(meetingTimes: [MeetingTime], seatsCapacity: Int, seatsRemaining: Int, waitCapacity: Int, waitRemaining: Int, profs: [String], location: String, crn: String, course: CourseModel, selected: Bool) {
         self.meetingTimes = meetingTimes
         self.seatsCapacity = seatsCapacity
         self.seatsRemaining = seatsRemaining
@@ -76,6 +83,7 @@ struct SectionModel: Codable {
         self.location = location
         self.crn = crn
         self.course = course
+        self.selected = selected
     }
     
     func getSectionEvents() -> [SectionEvent]{
@@ -85,6 +93,10 @@ struct SectionModel: Codable {
         }
         
         return sectionEvents
+    }
+    
+    func toggleSelected() {
+        selected = !selected
     }
     
     func getSearchTerms(searchOptions: SearchOptions) -> String {
