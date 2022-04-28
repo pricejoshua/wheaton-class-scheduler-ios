@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CourseViewCell: UITableViewCell {
+class CourseViewCell: UICollectionViewCell {
 
     @IBOutlet weak var classNameLabel: UILabel!
     @IBOutlet weak var courseIDLabel: UILabel!
