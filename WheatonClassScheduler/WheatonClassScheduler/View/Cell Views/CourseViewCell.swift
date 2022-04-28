@@ -19,8 +19,8 @@ class CourseViewCell: UICollectionViewCell {
         super.awakeFromNib()
         backgroundView?.backgroundColor = .white
         // Initialization code
-//        cellBackgroundView.backgroundColor = .cyan
-//        cellBackgroundView.
+        cellBackgroundView.backgroundColor = .cyan
+        cellBackgroundView.layer.cornerRadius = 10.0
     }
 
 }
