@@ -14,7 +14,10 @@ class CoursesDataModel: Codable {
     var courses: [String: [CourseModel]]!
     var sections: [String: [SectionModel]]!
     
+    var selectedSections: [Int]
+    
     var terms: [String: String]
+    var currentTerm: String
     
     static let coursesDataModel = CoursesDataModel()
     
@@ -22,12 +25,16 @@ class CoursesDataModel: Codable {
         self.courses = [String: [CourseModel]]()
         self.sections = [String: [SectionModel]]()
         self.terms = [String: String]()
+        self.selectedSections = [Int]()
+        self.currentTerm = ""
     }
     
     func setCoursesDataModel(coursesDataModel: CoursesDataModel) {
         CoursesDataModel.coursesDataModel.setCourses(courses: coursesDataModel.courses)
         CoursesDataModel.coursesDataModel.setSections(sections: coursesDataModel.sections)
         CoursesDataModel.coursesDataModel.setTerms(terms: coursesDataModel.terms)
+        CoursesDataModel.coursesDataModel.setSelectedSections(selectedSections: coursesDataModel.selectedSections)
+        CoursesDataModel.coursesDataModel.setCurrentTerm(term: coursesDataModel.currentTerm)
     }
     
     func setCourses(courses: [String: [CourseModel]]) {
@@ -46,6 +53,19 @@ class CoursesDataModel: Codable {
         return courses[term]!
     }
     
+    func getCourses() -> [CourseModel] {
+        return courses[self.currentTerm]!
+    }
+    
+    func getSections() -> [SectionModel] {
+        return sections[self.currentTerm]!
+    }
+    
+    func setCurrentTerm(term: String) {
+        self.selectedSections = []
+        self.currentTerm = term
+    }
+    
     func getSectionsByTerm(term: String) -> [SectionModel] {
         return sections[term]!
     }
@@ -54,7 +74,12 @@ class CoursesDataModel: Codable {
         return courses[term]!.first(where: {c in c.subject == subject && c.classID == classID})
     }
     
+    func setSelectedSections(selectedSections: [Int]){
+        self.selectedSections = selectedSections
+    }
+    
     func initTerms() {
+        print(courses)
         for (k, _) in courses {
             terms[k] = getTermName(term: k)
         }

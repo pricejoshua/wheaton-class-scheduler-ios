@@ -7,15 +7,19 @@
 
 import UIKit
 
-class CourseViewCell: UICollectionViewCell {
+class CourseViewCell: UITableViewCell {
 
     @IBOutlet weak var classNameLabel: UILabel!
     @IBOutlet weak var courseIDLabel: UILabel!
     @IBOutlet weak var profLabel: UILabel!
+    @IBOutlet weak var cellBackgroundView: UIView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+//        cellBackgroundView.backgroundColor = .cyan
+//        cellBackgroundView.
     }
 
 }

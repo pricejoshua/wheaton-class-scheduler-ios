@@ -7,15 +7,16 @@
 
 import UIKit
 
-
 class FiltersViewController: UIViewController {
     
     var filters: FiltersSelectedOptions!
     
-    
+    var delegate: FilterOptionsDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        filters = FiltersSelectedOptions(searchBy: SearchOptions.init(subject: false, classID: false, course: true, profs: false, name: true), tags: [], term: "202208")
         
         // Do any additional setup after loading the view.
     }

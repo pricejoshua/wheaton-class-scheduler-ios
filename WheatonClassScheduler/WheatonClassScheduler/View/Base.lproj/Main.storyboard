@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -52,43 +51,39 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mY1-mc-ilN">
-                                <rect key="frame" x="0.0" y="139" width="414" height="757"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0ra-ix-5wx">
+                                <rect key="frame" x="0.0" y="149" width="414" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9uB-UB-sab">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cfe-zc-4nv" customClass="CourseViewCell" customModule="WheatonClassScheduler" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eYJ-Np-JDh">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="d60-vo-dhs" customClass="CourseViewCell" customModule="WheatonClassScheduler" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d60-vo-dhs" id="za9-kj-YCn">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="Fmt-Ge-ff3" id="fSW-4T-3cR"/>
-                                </connections>
-                            </collectionView>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qsl-3Q-Fjq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mY1-mc-ilN" firstAttribute="top" secondItem="lO6-Sm-LcE" secondAttribute="bottom" id="1tl-fw-QJ8"/>
                             <constraint firstItem="lO6-Sm-LcE" firstAttribute="leading" secondItem="qsl-3Q-Fjq" secondAttribute="leading" id="2xW-nG-KMl"/>
-                            <constraint firstItem="mY1-mc-ilN" firstAttribute="trailing" secondItem="qsl-3Q-Fjq" secondAttribute="trailing" id="4Pb-1h-ADE"/>
+                            <constraint firstItem="0ra-ix-5wx" firstAttribute="top" secondItem="lO6-Sm-LcE" secondAttribute="bottom" constant="10" id="Fyd-rH-QJ5"/>
                             <constraint firstItem="lO6-Sm-LcE" firstAttribute="trailing" secondItem="qsl-3Q-Fjq" secondAttribute="trailing" id="Haq-Fb-65S"/>
-                            <constraint firstAttribute="bottom" secondItem="mY1-mc-ilN" secondAttribute="bottom" id="Szn-4l-Jy0"/>
                             <constraint firstItem="lO6-Sm-LcE" firstAttribute="top" secondItem="qsl-3Q-Fjq" secondAttribute="top" id="V0X-DB-TuZ"/>
-                            <constraint firstItem="mY1-mc-ilN" firstAttribute="leading" secondItem="qsl-3Q-Fjq" secondAttribute="leading" id="e5D-kG-UQW"/>
+                            <constraint firstItem="qsl-3Q-Fjq" firstAttribute="bottom" secondItem="0ra-ix-5wx" secondAttribute="bottom" constant="10" id="fxr-uE-3hP"/>
+                            <constraint firstItem="qsl-3Q-Fjq" firstAttribute="trailing" secondItem="0ra-ix-5wx" secondAttribute="trailing" id="lP2-1h-XcA"/>
+                            <constraint firstItem="0ra-ix-5wx" firstAttribute="leading" secondItem="qsl-3Q-Fjq" secondAttribute="leading" id="uTK-7G-QKG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="79I-T0-S6w">
+                        <barButtonItem key="leftBarButtonItem" title="Save" id="xQX-YM-uiG">
+                            <connections>
+                                <action selector="saveButton:" destination="Fmt-Ge-ff3" id="Dcw-mQ-Vts"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Filters" id="YVc-y5-Hnc">
                             <connections>
                                 <segue destination="EeB-J1-3yg" kind="show" identifier="toFiltersViewController" id="RGA-IG-6R9"/>
@@ -96,7 +91,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="classCollectionView" destination="mY1-mc-ilN" id="Muu-1B-k3d"/>
+                        <outlet property="classTableView" destination="0ra-ix-5wx" id="YmY-yj-GvV"/>
                         <outlet property="searchBar" destination="lO6-Sm-LcE" id="tYp-zG-9g3"/>
                     </connections>
                 </viewController>

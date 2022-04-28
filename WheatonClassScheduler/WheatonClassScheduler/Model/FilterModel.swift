@@ -8,7 +8,7 @@
 import Foundation
 
 protocol FilterOptionsDelegate {
-    func finishUpdate(selectedOptions: FiltersSelectedOptions)
+    func filterOptionsDidUpdate(selectedOptions: FiltersSelectedOptions)
 }
 
 class SearchOptions {
@@ -31,7 +31,7 @@ class SearchOptions {
 struct FiltersSelectedOptions {
     
     var searchBy: SearchOptions
-    var tags: [String]
+    var tags = [String]()
     var term: String
 
 }

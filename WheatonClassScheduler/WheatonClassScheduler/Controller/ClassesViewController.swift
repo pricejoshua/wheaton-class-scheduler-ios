@@ -14,31 +14,29 @@ class ClassesViewController: UIViewController {
 //    var courses = [CourseModel]()
 //    var sections = [SectionModel]()
     var courseDataModel = CoursesDataModel.coursesDataModel
-    var term = "202208"
+    var term: String!
     var filteredSections = [SectionModel]()
     
     var filterOptions: FiltersSelectedOptions!
     
-    @IBOutlet weak var classCollectionView: UICollectionView!
+    @IBOutlet weak var classTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        // testSections()
-        classCollectionView.dataSource = self
+        // testSections()-
         
-        classCollectionView.register(UINib(nibName: CourseViewCell.className, bundle: .none), forCellWithReuseIdentifier: CourseViewCell.className)
+        term = courseDataModel.currentTerm
         
-        var config = UICollectionLayoutListConfiguration(appearance:
-          .insetGrouped)
-        config.backgroundColor = .systemGray
-        classCollectionView.collectionViewLayout =
-          UICollectionViewCompositionalLayout.list(using: config)
+        classTableView.dataSource = self
+                
+        classTableView.register(UINib(nibName: CourseViewCell.className, bundle: .none), forCellReuseIdentifier: CourseViewCell.className)
+
         
         searchBar.delegate = self
-        filteredSections = courseDataModel.getSectionsByTerm(term: term)
-        filterOptions = FiltersSelectedOptions(searchBy: SearchOptions(subject: false, classID: false, course: false, profs: false, name: true), tags: [], term: "202208")
+        filteredSections = courseDataModel.getSections()
+        filterOptions = FiltersSelectedOptions(searchBy: SearchOptions(subject: false, classID: false, course: false, profs: false, name: true), tags: [], term: courseDataModel.currentTerm)
     }
     
     func changeTerms(term: String) {
@@ -71,9 +69,13 @@ class ClassesViewController: UIViewController {
                 }
             }
         }
-}
+    }
     
-//    func testSections() {
+    @IBAction func saveButton(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    //    func testSections() {
 //        var s = [SectionModel]()
 //
 //        var c = (CourseModel(termID: "202201", subject: "CSCI", classID: "373", name: "iOS Dev", attributes: [], /* coreqs: [], prereqs: [], */ sections: []))
@@ -113,13 +115,15 @@ class ClassesViewController: UIViewController {
 
 // MARK: - UICollectionView
 
-extension ClassesViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension ClassesViewController: UITableViewDataSource {
+
+    
+    func tableView(_ collectionView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredSections.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CourseViewCell.className, for: indexPath) as? CourseViewCell {
+    func tableView(_ collectionView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = collectionView.dequeueReusableCell(withIdentifier: CourseViewCell.className, for: indexPath) as? CourseViewCell {
             let section = filteredSections[indexPath.row]
             cell.classNameLabel.text = section.name
             cell.courseIDLabel.text = section.subject + " " + section.classID
@@ -135,7 +139,7 @@ extension ClassesViewController: UICollectionViewDataSource {
 extension ClassesViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filter()
-        self.classCollectionView.reloadData()
+        self.classTableView.reloadData()
     }
 }
 
@@ -145,7 +149,7 @@ extension ClassesViewController: UISearchBarDelegate {
 extension ClassesViewController: CourseDataDelegate {
     func courseDataDidUpdate(_ courseData: CourseData) {
         filteredSections = courseDataModel.getSectionsByTerm(term: term)
-        classCollectionView.reloadData()
+        classTableView.reloadData()
     }
     
     func courseDataDidFailWithError(error: Error) {
@@ -156,10 +160,11 @@ extension ClassesViewController: CourseDataDelegate {
 // MARK: - FilterOptionsDelegate
 
 extension ClassesViewController: FilterOptionsDelegate {
-    func finishUpdate(selectedOptions: FiltersSelectedOptions) {
+    
+    func filterOptionsDidUpdate(selectedOptions: FiltersSelectedOptions) {
         filterOptions = selectedOptions
         filter()
-        classCollectionView.reloadData()
+        classTableView.reloadData()
     }
 }
 

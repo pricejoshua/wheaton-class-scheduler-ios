@@ -31,7 +31,6 @@ class CourseData {
             } else {
                 print("loaded data")
                 CoursesDataModel.coursesDataModel.setCoursesDataModel(coursesDataModel: courses)
-                
             }
         } catch {
             print(error)
@@ -82,7 +81,9 @@ class CourseData {
         do {
             let parsedCourses = try JSONDecoder().decode(Courses.self, from: courseData)
             var courses = [String: [CourseModel]]()
+            var terms = Set<String>()
             for c in parsedCourses.wheaton.classes {
+                terms.insert(c.termID)
                 if (courses[c.termID] == nil) {
                     courses[c.termID] = [CourseModel]()
                 }
@@ -95,6 +96,13 @@ class CourseData {
             }
             
             coursesDataModel.setCourses(courses: courses)
+            print(terms)
+            let latestTerm = terms.sorted().last!
+            print(latestTerm)
+            coursesDataModel.initTerms()
+            coursesDataModel.setCurrentTerm(term: latestTerm)
+            print(coursesDataModel.currentTerm)
+            
             
             var sections = [String: [SectionModel]]()
             var location: String

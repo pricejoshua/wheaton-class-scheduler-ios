@@ -15,7 +15,8 @@ class SectionWeekView: JZBaseWeekView {
 
         self.collectionView.register(UINib(nibName: ClassEventCell.className, bundle: nil), forCellWithReuseIdentifier: ClassEventCell.className)
         
-//        collectionView.register(ColumnHeader.self, forSupplementaryViewOfKind: JZSupplementaryViewKinds.columnHeader, withReuseIdentifier: JZSupplementaryViewKinds.columnHeader)
+        collectionView.register(ColumnHeader.self, forSupplementaryViewOfKind: JZSupplementaryViewKinds.columnHeader, withReuseIdentifier: JZSupplementaryViewKinds.columnHeader)
+        collectionView.register(CurrentTimeline.self, forSupplementaryViewOfKind: JZSupplementaryViewKinds.currentTimeline, withReuseIdentifier: JZSupplementaryViewKinds.currentTimeline)
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -36,11 +37,14 @@ class SectionWeekView: JZBaseWeekView {
         var view = UICollectionReusableView()
 
         switch kind {
-//        case JZSupplementaryViewKinds.columnHeader:
-//            if let columnHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kind, for: indexPath) as? ColumnHeader {
-//                columnHeader.updateView(date: flowLayout.dateForColumnHeader(at: indexPath))
-//                view = columnHeader
-//            }
+        case JZSupplementaryViewKinds.columnHeader:
+            if let columnHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kind, for: indexPath) as? ColumnHeader {
+                columnHeader.updateView(date: flowLayout.dateForColumnHeader(at: indexPath))
+                view = columnHeader
+            }
+        case JZSupplementaryViewKinds.currentTimeline:
+            view = super.collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
+            view.isHidden = true
         default:
             view = super.collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
         }

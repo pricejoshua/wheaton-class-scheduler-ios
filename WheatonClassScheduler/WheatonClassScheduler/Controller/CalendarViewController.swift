@@ -13,6 +13,8 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarWeekView: SectionWeekView!
 
     let viewModel = DefaultViewModel()
+    
+    let coursesDataModel = CoursesDataModel.coursesDataModel
 
 
     override func viewDidLoad() {
@@ -32,12 +34,19 @@ class CalendarViewController: UIViewController {
     private func setupCalendarView() {
         calendarWeekView.baseDelegate = self
 
-        viewModel.testSections()
+//        viewModel.testSections()
         
+        var events = [SectionEvent]()
+        
+        for selected in CoursesDataModel.coursesDataModel.selectedSections {
+            events.append(contentsOf: coursesDataModel.getSections()[selected].getSectionEvents())
+        }
+        
+        let eventsByDate = JZWeekViewHelper.getIntraEventsByDate(originalEvents: events)
         // Basic setup
         calendarWeekView.setupCalendar(numOfDays: 5,
                                        setDate: Date().firstDayOfSchoolWeek,
-                                       allEvents: viewModel.eventsByDate,
+                                       allEvents: eventsByDate,
                                        scrollType: .pageScroll, scrollableRange: (Date().firstDayOfSchoolWeek, Date().lastDayOfSchoolWeek))
         // Optional
         calendarWeekView.updateFlowLayout(JZWeekViewFlowLayout(hourGridDivision: JZHourGridDivision.minutes_15))
