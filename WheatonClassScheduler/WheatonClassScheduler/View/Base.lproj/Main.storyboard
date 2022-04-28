@@ -112,20 +112,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvV-wZ-YL3">
-                                <rect key="frame" x="145" y="413" width="125" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="fTm-8f-cct" kind="presentation" identifier="toTagsViewController" id="XZZ-gi-SzA"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XWx-Th-8ri">
+                                <rect key="frame" x="50" y="138" width="314" height="674"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvV-wZ-YL3">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="674"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="ZSu-Qu-1Io"/>
+                                            <constraint firstAttribute="width" constant="100" id="wLx-4y-euk"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Edit Tags"/>
+                                        <connections>
+                                            <segue destination="fTm-8f-cct" kind="presentation" identifier="toTagsViewController" id="XZZ-gi-SzA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hvV-wZ-YL3" firstAttribute="centerY" secondItem="XWx-Th-8ri" secondAttribute="centerY" id="qQ5-Gd-JkO"/>
+                                    <constraint firstItem="hvV-wZ-YL3" firstAttribute="centerX" secondItem="XWx-Th-8ri" secondAttribute="centerX" id="zHV-qA-1rb"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hiM-4z-MbH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hiM-4z-MbH" firstAttribute="bottom" secondItem="XWx-Th-8ri" secondAttribute="bottom" constant="50" id="6Zx-OP-7vt"/>
+                            <constraint firstItem="hiM-4z-MbH" firstAttribute="trailing" secondItem="XWx-Th-8ri" secondAttribute="trailing" constant="50" id="WKJ-kw-Ysf"/>
+                            <constraint firstItem="XWx-Th-8ri" firstAttribute="leading" secondItem="hiM-4z-MbH" secondAttribute="leading" constant="50" id="cBO-EB-NxY"/>
+                            <constraint firstItem="XWx-Th-8ri" firstAttribute="top" secondItem="hiM-4z-MbH" secondAttribute="top" constant="50" id="phj-IW-T4o"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="A8M-rD-jSI"/>
+                    <navigationItem key="navigationItem" id="A8M-rD-jSI">
+                        <barButtonItem key="rightBarButtonItem" title="Apply" id="Mni-46-cMY"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ncm-kj-edG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

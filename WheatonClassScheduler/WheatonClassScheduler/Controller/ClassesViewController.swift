@@ -31,10 +31,9 @@ class ClassesViewController: UIViewController {
         classCollectionView.register(UINib(nibName: CourseViewCell.className, bundle: .none), forCellWithReuseIdentifier: CourseViewCell.className)
         
         var config = UICollectionLayoutListConfiguration(appearance:
-          .insetGrouped)
-        config.backgroundColor = .systemGray
+          .grouped)
         classCollectionView.collectionViewLayout =
-          UICollectionViewCompositionalLayout.list(using: config)
+        UICollectionViewCompositionalLayout.list(using: config)
         
         searchBar.delegate = self
         filteredSections = courseDataModel.getSections()
