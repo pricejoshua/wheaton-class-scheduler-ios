@@ -17,6 +17,7 @@ class CourseViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        backgroundView?.backgroundColor = .white
         // Initialization code
 //        cellBackgroundView.backgroundColor = .cyan
 //        cellBackgroundView.
