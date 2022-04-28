@@ -5,7 +5,7 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - Courses
 struct Courses: Codable {
     let wheaton: Wheaton
 

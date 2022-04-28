@@ -118,7 +118,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <segue destination="fTm-8f-cct" kind="presentation" id="XZZ-gi-SzA"/>
+                                    <segue destination="fTm-8f-cct" kind="presentation" identifier="toTagsViewController" id="XZZ-gi-SzA"/>
                                 </connections>
                             </button>
                         </subviews>

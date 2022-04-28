@@ -10,7 +10,7 @@ import UIKit
 
 class FiltersViewController: UIViewController {
     
-    var filterModel: FiltersSelectedOptions!
+    var filters: FiltersSelectedOptions!
     
     
     
@@ -21,21 +21,30 @@ class FiltersViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "toTagsViewController" {
+            if let destVC = segue.destination as? TagsViewController {
+                destVC.delegate = self
+            }
+        }
     }
-    */
+    
 
 }
 
 extension FiltersViewController: TagDataDelegate {
     func tagsDidChange(tagItems: [TagItem]) {
-        print()
+        filters.tags = []
+        for tagItem in tagItems {
+            filters.tags.append(tagItem.tag)
+        }
     }
     
     

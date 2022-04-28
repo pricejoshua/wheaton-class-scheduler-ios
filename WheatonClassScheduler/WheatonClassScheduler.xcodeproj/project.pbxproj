@@ -22,6 +22,7 @@
 		C833D6D72811F60400B391AC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C833D6D52811F60400B391AC /* Extensions.swift */; };
 		C833D6D82811F60400B391AC /* ToastUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C833D6D62811F60400B391AC /* ToastUtil.swift */; };
 		C833D6DA2811F75700B391AC /* SectionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C833D6D92811F75700B391AC /* SectionEvent.swift */; };
+		C842B3B3281A242D00C4A10D /* WheatonClassSchedluer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C842B3B1281A242D00C4A10D /* WheatonClassSchedluer.xcdatamodeld */; };
 		C8535749280754E400EF12C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C853572E280754E400EF12C9 /* Assets.xcassets */; };
 		C853574A280754E400EF12C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C853572F280754E400EF12C9 /* LaunchScreen.storyboard */; };
 		C853574B280754E400EF12C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8535731280754E400EF12C9 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		C833D6D52811F60400B391AC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C833D6D62811F60400B391AC /* ToastUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastUtil.swift; sourceTree = "<group>"; };
 		C833D6D92811F75700B391AC /* SectionEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionEvent.swift; sourceTree = "<group>"; };
+		C842B3B2281A242D00C4A10D /* WheatonClassSchedluer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WheatonClassSchedluer.xcdatamodel; sourceTree = "<group>"; };
 		C853572E280754E400EF12C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8535730280754E400EF12C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8535732280754E400EF12C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				C8535744280754E400EF12C9 /* Utils */,
 				C8535747280754E400EF12C9 /* Info.plist */,
 				C8535748280754E400EF12C9 /* SceneDelegate.swift */,
+				C842B3B1281A242D00C4A10D /* WheatonClassSchedluer.xcdatamodeld */,
 			);
 			path = WheatonClassScheduler;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8535757280754E400EF12C9 /* AppDelegate.swift in Sources */,
+				C842B3B3281A242D00C4A10D /* WheatonClassSchedluer.xcdatamodeld in Sources */,
 				C80E0E8D281724090044790E /* ColumnHeader.swift in Sources */,
 				C80E0E9B281769B80044790E /* CourseData.swift in Sources */,
 				C80E0E9D28176B7E0044790E /* CoursesDataModel.swift in Sources */,
@@ -568,6 +572,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C842B3B1281A242D00C4A10D /* WheatonClassSchedluer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C842B3B2281A242D00C4A10D /* WheatonClassSchedluer.xcdatamodel */,
+			);
+			currentVersion = C842B3B2281A242D00C4A10D /* WheatonClassSchedluer.xcdatamodel */;
+			path = WheatonClassSchedluer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C8CFA56E27DFBBAE00C0D709 /* Project object */;
 }

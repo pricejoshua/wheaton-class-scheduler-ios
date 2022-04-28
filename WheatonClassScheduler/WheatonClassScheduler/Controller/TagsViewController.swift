@@ -43,7 +43,7 @@ class TagsViewController: UIViewController {
             if t != "" {
                 let ti = TagItem(tag: t, checked: false)
                 tagItems.append(ti)
-                print(ti.description)
+//                print(ti.description)
             }
         }
         
@@ -154,11 +154,11 @@ extension TagsViewController: UITableViewDataSource, UITableViewDelegate {
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("tv")
+//        print("tv")
         let cell = tableView.dequeueReusableCell(withIdentifier: "tagItem", for: indexPath)
         setLabel(cell: cell, item: tagItems[indexPath.row])
         setCheckmark(cell: cell, item: tagItems[indexPath.row])
-        print(tagItems[indexPath.row].description)
+//        print(tagItems[indexPath.row].description)
         return cell
         
     }

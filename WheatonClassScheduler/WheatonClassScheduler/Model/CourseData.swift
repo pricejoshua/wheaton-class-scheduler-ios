@@ -90,6 +90,7 @@ class CourseData {
                     sections[s.termID]?.append(SectionModel(meetingTimes: meetings, seatsCapacity: s.seatsCapacity, seatsRemaining: s.seatsRemaining, waitCapacity: s.waitCapacity, waitRemaining: s.waitRemaining, profs: s.profs, location: location, crn: s.crn, course: course))
                 }
                 print()
+                
             }
             
             coursesDataModel.sections = sections
