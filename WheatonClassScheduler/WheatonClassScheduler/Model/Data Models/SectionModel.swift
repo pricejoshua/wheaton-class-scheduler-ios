@@ -99,23 +99,23 @@ class SectionModel: Codable {
         selected = !selected
     }
     
-    func getSearchTerms(searchOptions: SearchOptions) -> String {
+    func getSearchTerms(searchOptions: [SearchOptions: Bool]) -> String {
         var searchTerms = ""
-        if searchOptions.subject {
+        if searchOptions[.subject]! {
             searchTerms = searchTerms + course.subject
         }
-        if searchOptions.profs {
+        if searchOptions[.profs]! {
             for p in profs {
                 searchTerms += p
             }
         }
-        if searchOptions.classID {
+        if searchOptions[.classID]! {
             searchTerms += course.classID
         }
-        if searchOptions.course {
+        if searchOptions[.course]! {
             searchTerms += course.subject + " " + course.classID
         }
-        if searchOptions.name {
+        if searchOptions[.name]! {
             searchTerms += course.name
         }
         return searchTerms // + " " + course.classID + course.attributes.joined(separator: "") + profs.joined(separator: "") + course.name

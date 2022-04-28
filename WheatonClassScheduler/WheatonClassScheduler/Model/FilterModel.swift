@@ -11,27 +11,25 @@ protocol FilterOptionsDelegate {
     func filterOptionsDidUpdate(selectedOptions: FiltersSelectedOptions)
 }
 
-class SearchOptions {
-    init(subject: Bool, classID: Bool, course: Bool, profs: Bool, name: Bool) {
-        self.subject = subject
-        self.classID = classID
-        self.course = course
-        self.profs = profs
-        self.name = name
-    }
-    
-    var subject: Bool
-    var classID: Bool
-    var course: Bool
-    var profs: Bool
-    var name: Bool
+enum SearchOptions: Int, CaseIterable {
+    case subject
+    case classID
+    case name
+    case profs
+    case course
 }
 
-
-struct FiltersSelectedOptions {
+class FiltersSelectedOptions {
     
-    var searchBy: SearchOptions
+    init(searchBy: [SearchOptions: Bool], tags: [String] = [String](), term: String = "") {
+        self.searchBy = searchBy
+        self.tags = tags
+        self.term = term
+    }
+    
+    
+    var searchBy: [SearchOptions: Bool]
     var tags = [String]()
-    var term: String
+    var term: String = ""
 
 }

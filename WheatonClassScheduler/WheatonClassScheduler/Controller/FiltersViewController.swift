@@ -10,13 +10,16 @@ import UIKit
 class FiltersViewController: UIViewController {
     
     var filters: FiltersSelectedOptions!
-    
     var delegate: FilterOptionsDelegate!
+    
+    var searchOptions: [SearchOptions: Bool] = [.subject: false, .course: false, .profs: false, .classID: false, .name: true]
+    
+    @IBOutlet weak var searchOptionsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        filters = FiltersSelectedOptions(searchBy: SearchOptions.init(subject: false, classID: false, course: true, profs: false, name: true), tags: [], term: "202208")
+        filters = FiltersSelectedOptions(searchBy: [.subject: false, .course: false, .profs: false, .classID: false, .name: true], tags: [], term: CoursesDataModel.coursesDataModel.currentTerm)
         
         // Do any additional setup after loading the view.
     }
@@ -47,7 +50,33 @@ extension FiltersViewController: TagDataDelegate {
             filters.tags.append(tagItem.tag)
         }
     }
-    
+}
+
+class SearchOptionCell: UITableViewCell {
+    @IBOutlet weak var searchOptionLabel: UILabel!
     
 }
 
+extension FiltersViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return SearchOptions.allCases.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchOptionsCell", for: indexPath)
+        if let soCell = cell as? SearchOptionCell {
+            soCell.searchOptionLabel.text = "subject"
+            
+            return soCell
+        }
+            
+        
+        return cell
+        
+        
+            
+    }
+    
+    
+    
+}

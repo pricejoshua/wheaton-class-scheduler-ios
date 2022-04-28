@@ -112,13 +112,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XWx-Th-8ri">
-                                <rect key="frame" x="50" y="138" width="314" height="674"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XWx-Th-8ri">
+                                <rect key="frame" x="50" y="138" width="314" height="173"/>
                                 <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4c9-SA-6ca">
+                                        <rect key="frame" x="37" y="0.0" width="240" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchOptionCell" id="tX3-mj-YNl" customClass="SearchOptionCell" customModule="WheatonClassScheduler" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="44.5" width="240" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tX3-mj-YNl" id="Uxw-U2-5Ft">
+                                                    <rect key="frame" x="0.0" y="0.0" width="203.5" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3h-dt-1BR">
+                                                            <rect key="frame" x="80" y="10.5" width="42" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="searchOptionLabel" destination="A3h-dt-1BR" id="IhH-S2-x2s"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvV-wZ-YL3">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="674"/>
+                                        <rect key="frame" x="107" y="148" width="100" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="ZSu-Qu-1Io"/>
+                                            <constraint firstAttribute="height" constant="25" id="ZSu-Qu-1Io"/>
                                             <constraint firstAttribute="width" constant="100" id="wLx-4y-euk"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
@@ -128,16 +154,11 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="hvV-wZ-YL3" firstAttribute="centerY" secondItem="XWx-Th-8ri" secondAttribute="centerY" id="qQ5-Gd-JkO"/>
-                                    <constraint firstItem="hvV-wZ-YL3" firstAttribute="centerX" secondItem="XWx-Th-8ri" secondAttribute="centerX" id="zHV-qA-1rb"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hiM-4z-MbH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hiM-4z-MbH" firstAttribute="bottom" secondItem="XWx-Th-8ri" secondAttribute="bottom" constant="50" id="6Zx-OP-7vt"/>
                             <constraint firstItem="hiM-4z-MbH" firstAttribute="trailing" secondItem="XWx-Th-8ri" secondAttribute="trailing" constant="50" id="WKJ-kw-Ysf"/>
                             <constraint firstItem="XWx-Th-8ri" firstAttribute="leading" secondItem="hiM-4z-MbH" secondAttribute="leading" constant="50" id="cBO-EB-NxY"/>
                             <constraint firstItem="XWx-Th-8ri" firstAttribute="top" secondItem="hiM-4z-MbH" secondAttribute="top" constant="50" id="phj-IW-T4o"/>
@@ -146,6 +167,9 @@
                     <navigationItem key="navigationItem" id="A8M-rD-jSI">
                         <barButtonItem key="rightBarButtonItem" title="Apply" id="Mni-46-cMY"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchOptionsTableView" destination="4c9-SA-6ca" id="Py3-Me-hSf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ncm-kj-edG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

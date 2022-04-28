@@ -38,7 +38,7 @@ class ClassesViewController: UIViewController {
         
         searchBar.delegate = self
         filteredSections = courseDataModel.getSections()
-        filterOptions = FiltersSelectedOptions(searchBy: SearchOptions(subject: false, classID: false, course: false, profs: false, name: true), tags: [], term: CoursesDataModel.coursesDataModel.currentTerm)
+        filterOptions = FiltersSelectedOptions(searchBy: [.subject: false, .course: false, .profs: false, .classID: false, .name: true], tags: [], term: CoursesDataModel.coursesDataModel.currentTerm)
     }
     
     func changeTerms(term: String) {
