@@ -8,7 +8,9 @@
 import Foundation
 
 
-class CoursesDataModel {
+class CoursesDataModel: Codable {
+    var date: Date!
+    
     var courses: [String: [CourseModel]]!
     var sections: [String: [SectionModel]]!
     
@@ -22,8 +24,22 @@ class CoursesDataModel {
         self.terms = [String: String]()
     }
     
+    func setCoursesDataModel(coursesDataModel: CoursesDataModel) {
+        CoursesDataModel.coursesDataModel.setCourses(courses: coursesDataModel.courses)
+        CoursesDataModel.coursesDataModel.setSections(sections: coursesDataModel.sections)
+        CoursesDataModel.coursesDataModel.setTerms(terms: coursesDataModel.terms)
+    }
+    
     func setCourses(courses: [String: [CourseModel]]) {
         self.courses = courses
+    }
+    
+    func setSections(sections: [String: [SectionModel]]){
+        self.sections = sections
+    }
+    
+    func setTerms(terms: [String: String]) {
+        self.terms = terms
     }
     
     func getCourses(term: String) -> [CourseModel] {
@@ -45,7 +61,11 @@ class CoursesDataModel {
     }
     
     func getTerms() -> [String]{
-        return [String](terms.keys)
+        var ts = [String]()
+        for (k, _) in terms {
+            ts.append(k)
+        }
+        return ts
     }
     
     func getAllTerms() -> [String: String]{
@@ -61,13 +81,13 @@ class CoursesDataModel {
         var semester = ""
         switch sem {
         case "08":
-            semester = "Fall"
+            semester = "Fall "
         case "01":
-            semester = "Spring"
+            semester = "Spring "
         case "05":
-            semester = "Summer"
+            semester = "Summer "
         default:
-            semester = "Unknown"
+            semester = "Unknown "
         }
         
         return semester + String(year)

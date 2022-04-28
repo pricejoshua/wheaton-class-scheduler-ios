@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Disk
 
 protocol CourseDataDelegate {
     func courseDataDidUpdate (_ courseData: CourseData)
@@ -19,6 +20,24 @@ class CourseData {
     var delegate: CourseDataDelegate?
     
     let url = "https://raw.githubusercontent.com/pricejoshua/course-catalog-api/master/data/classes.cache.json"
+    
+    func loadData() {
+        var courses: CoursesDataModel!
+        do {
+            courses = try Disk.retrieve("courses", from: .caches, as: CoursesDataModel.self)
+            if (courses.date - Date()).day! > 2 {
+                print("requesting data")
+                performRequest()
+            } else {
+                print("loaded data")
+                CoursesDataModel.coursesDataModel.setCoursesDataModel(coursesDataModel: courses)
+                
+            }
+        } catch {
+            print(error)
+            performRequest()
+        }
+    }
     
     func performRequest() {
         if let url = URL(string: url) {
@@ -44,13 +63,21 @@ class CourseData {
 //        if let dataString = String(data: data, encoding: .utf8) {
 //            print(dataString)
 //        }
-        if let courses = parseData(courseData: data) {
+        if parseData(courseData: data) {
+            coursesDataModel.date = Date()
+            print("here")
+            do {
+                try Disk.save(coursesDataModel, to: .caches, as: "courses")
+                print("saved")
+            } catch {
+                print(error)
+            }
             self.delegate?.courseDataDidUpdate(self)
         }
         
     }
     
-    func parseData(courseData: Data) -> CoursesDataModel? {
+    func parseData(courseData: Data) -> Bool {
         print(courseData)
         do {
             let parsedCourses = try JSONDecoder().decode(Courses.self, from: courseData)
@@ -89,8 +116,6 @@ class CourseData {
                 if let course = coursesDataModel.getCourseById(term: s.termID, subject: s.subject, classID: s.classID){
                     sections[s.termID]?.append(SectionModel(meetingTimes: meetings, seatsCapacity: s.seatsCapacity, seatsRemaining: s.seatsRemaining, waitCapacity: s.waitCapacity, waitRemaining: s.waitRemaining, profs: s.profs, location: location, crn: s.crn, course: course))
                 }
-                print()
-                
             }
             
             coursesDataModel.sections = sections
@@ -100,11 +125,11 @@ class CourseData {
 //            
 //            
 //            print(parsedCourses.wheaton.sections.first?.meetings)
-            
+
         } catch {
             self.delegate?.courseDataDidFailWithError(error: error)
         }
-        return nil
+        return true
     }
     
     func getTime(time: End) -> Int?{

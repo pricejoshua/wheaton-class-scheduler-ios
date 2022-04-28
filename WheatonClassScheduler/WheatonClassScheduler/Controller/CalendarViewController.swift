@@ -13,13 +13,11 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarWeekView: SectionWeekView!
 
     let viewModel = DefaultViewModel()
-    var courseData = CourseData()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        courseData.performRequest()
         setupCalendarView()
 
     }
