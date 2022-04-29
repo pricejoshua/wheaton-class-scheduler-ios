@@ -12,7 +12,7 @@ class FiltersViewController: UIViewController {
     var filters: FiltersSelectedOptions!
     var delegate: FilterOptionsDelegate!
     
-    var searchOptions: [SearchOptions: Bool] = [.subject: false, .course: false, .profs: false, .classID: false, .name: true]
+    var searchOptions: [so: SearchOptions: isSelected: Bool] = [.subject: false, .course: false, .profs: false, .classID: false, .name: true]
     
     @IBOutlet weak var searchOptionsTableView: UITableView!
     
@@ -65,6 +65,7 @@ extension FiltersViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchOptionsCell", for: indexPath)
         if let soCell = cell as? SearchOptionCell {
+            soCell.searchOptionLabel.text = getNameByOption(so: searchOptions[indexPath.row].so)
             soCell.searchOptionLabel.text = "subject"
             
             return soCell
@@ -77,6 +78,19 @@ extension FiltersViewController: UITableViewDataSource, UITableViewDelegate {
             
     }
     
-    
+    func getNameByOption(so: SearchOptions) -> String {
+        switch so {
+        case .subject:
+            return "Subject"
+        case .classID:
+            return "Class ID"
+        case .name:
+            return "Class Name"
+        case .profs:
+            return "Professors"
+        case .course:
+            return "Course Name"
+        }
+    }
     
 }
