@@ -24,6 +24,7 @@ class CourseData {
     func loadData() {
         var courses: CoursesDataModel!
         do {
+            // get courses from cache
             courses = try Disk.retrieve("courses", from: .caches, as: CoursesDataModel.self)
             if (courses.date - Date()).day! > 2 {
                 print("requesting data")

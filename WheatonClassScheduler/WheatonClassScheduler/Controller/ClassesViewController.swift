@@ -160,7 +160,7 @@ extension ClassesViewController: CourseDataDelegate {
 extension ClassesViewController: FilterOptionsDelegate {
     func filterOptionsDidUpdate(selectedOptions: FiltersSelectedOptions) {
         filterOptions = selectedOptions
-        filter()
+        filter()	
         classCollectionView.reloadData()
     }
 }

@@ -20,7 +20,7 @@ class CourseViewCell: UICollectionViewCell {
         backgroundView?.backgroundColor = .white
         // Initialization code
         
-        cellBackgroundView.backgroundColor = .purple
+        cellBackgroundView.backgroundColor = .systemOrange
         cellBackgroundView.layer.cornerRadius = 20.0
 
     }

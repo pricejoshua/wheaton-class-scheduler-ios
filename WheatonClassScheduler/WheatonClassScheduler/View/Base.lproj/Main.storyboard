@@ -113,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XWx-Th-8ri">
-                                <rect key="frame" x="50" y="138" width="314" height="173"/>
+                                <rect key="frame" x="50" y="138" width="314" height="179"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4c9-SA-6ca">
                                         <rect key="frame" x="37" y="0.0" width="240" height="128"/>
@@ -140,13 +140,13 @@
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="EeB-J1-3yg" id="dhz-2P-NH6"/>
+                                            <outlet property="delegate" destination="EeB-J1-3yg" id="Fb7-NG-tCp"/>
+                                        </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvV-wZ-YL3">
-                                        <rect key="frame" x="107" y="148" width="100" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="ZSu-Qu-1Io"/>
-                                            <constraint firstAttribute="width" constant="100" id="wLx-4y-euk"/>
-                                        </constraints>
+                                        <rect key="frame" x="115.5" y="148" width="83.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Edit Tags"/>
                                         <connections>
