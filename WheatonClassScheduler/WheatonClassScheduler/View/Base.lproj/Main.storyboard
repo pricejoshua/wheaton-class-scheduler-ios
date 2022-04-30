@@ -112,56 +112,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XWx-Th-8ri">
-                                <rect key="frame" x="50" y="138" width="314" height="179"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4c9-SA-6ca">
-                                        <rect key="frame" x="37" y="0.0" width="240" height="128"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchOptionCell" id="tX3-mj-YNl" customClass="SearchOptionCell" customModule="WheatonClassScheduler" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="44.5" width="240" height="43.5"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tX3-mj-YNl" id="Uxw-U2-5Ft">
-                                                    <rect key="frame" x="0.0" y="0.0" width="203.5" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3h-dt-1BR">
-                                                            <rect key="frame" x="80" y="10.5" width="42" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </tableViewCellContentView>
-                                                <connections>
-                                                    <outlet property="searchOptionLabel" destination="A3h-dt-1BR" id="IhH-S2-x2s"/>
-                                                </connections>
-                                            </tableViewCell>
-                                        </prototypes>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvV-wZ-YL3">
+                                <rect key="frame" x="165" y="432" width="83.5" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Edit Tags"/>
+                                <connections>
+                                    <segue destination="fTm-8f-cct" kind="presentation" identifier="toTagsViewController" id="XZZ-gi-SzA"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4c9-SA-6ca">
+                                <rect key="frame" x="30" y="138" width="354" height="256"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="BkY-lh-haU"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchOptionCell" id="tX3-mj-YNl" customClass="SearchOptionCell" customModule="WheatonClassScheduler" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="354" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tX3-mj-YNl" id="Uxw-U2-5Ft">
+                                            <rect key="frame" x="0.0" y="0.0" width="354" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3h-dt-1BR">
+                                                    <rect key="frame" x="40" y="11.5" width="274" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="A3h-dt-1BR" secondAttribute="trailing" constant="20" id="Pw0-36-qSm"/>
+                                                <constraint firstItem="A3h-dt-1BR" firstAttribute="leading" secondItem="Uxw-U2-5Ft" secondAttribute="leadingMargin" constant="20" id="cF6-Jt-HMn"/>
+                                                <constraint firstItem="A3h-dt-1BR" firstAttribute="centerY" secondItem="Uxw-U2-5Ft" secondAttribute="centerY" id="s1d-lb-Pyu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dataSource" destination="EeB-J1-3yg" id="dhz-2P-NH6"/>
-                                            <outlet property="delegate" destination="EeB-J1-3yg" id="Fb7-NG-tCp"/>
+                                            <outlet property="searchOptionLabel" destination="A3h-dt-1BR" id="IhH-S2-x2s"/>
                                         </connections>
-                                    </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvV-wZ-YL3">
-                                        <rect key="frame" x="115.5" y="148" width="83.5" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Edit Tags"/>
-                                        <connections>
-                                            <segue destination="fTm-8f-cct" kind="presentation" identifier="toTagsViewController" id="XZZ-gi-SzA"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="EeB-J1-3yg" id="dhz-2P-NH6"/>
+                                    <outlet property="delegate" destination="EeB-J1-3yg" id="Fb7-NG-tCp"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hiM-4z-MbH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hiM-4z-MbH" firstAttribute="trailing" secondItem="XWx-Th-8ri" secondAttribute="trailing" constant="50" id="WKJ-kw-Ysf"/>
-                            <constraint firstItem="XWx-Th-8ri" firstAttribute="leading" secondItem="hiM-4z-MbH" secondAttribute="leading" constant="50" id="cBO-EB-NxY"/>
-                            <constraint firstItem="XWx-Th-8ri" firstAttribute="top" secondItem="hiM-4z-MbH" secondAttribute="top" constant="50" id="phj-IW-T4o"/>
+                            <constraint firstItem="4c9-SA-6ca" firstAttribute="centerX" secondItem="h3E-tk-rTV" secondAttribute="centerX" id="DIl-kY-DKa"/>
+                            <constraint firstItem="4c9-SA-6ca" firstAttribute="leading" secondItem="hiM-4z-MbH" secondAttribute="leading" constant="30" id="EWZ-GS-RHZ"/>
+                            <constraint firstItem="hiM-4z-MbH" firstAttribute="trailing" secondItem="4c9-SA-6ca" secondAttribute="trailing" constant="30" id="fMM-JQ-IQv"/>
+                            <constraint firstItem="4c9-SA-6ca" firstAttribute="top" secondItem="hiM-4z-MbH" secondAttribute="top" constant="50" id="fjk-9v-MYP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="A8M-rD-jSI">

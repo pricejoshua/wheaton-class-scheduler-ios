@@ -54,7 +54,7 @@ extension FiltersViewController: TagDataDelegate {
 
 class SearchOptionCell: UITableViewCell {
     @IBOutlet weak var searchOptionLabel: UILabel!
-    
+    @IBOutlet weak var checkLabel: UILabel!
 }
 
 // MARK: UITableView
@@ -66,35 +66,30 @@ extension FiltersViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searchOptionsCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchOptionCell", for: indexPath)
         print(cell)
         if let soCell = cell as? SearchOptionCell {
             let so  = SearchOptions(rawValue: indexPath.row)!
-            soCell.searchOptionLabel.text = getNameByOption(so: so)
-            print(getNameByOption(so: so))
+            print(so)
+            soCell.searchOptionLabel.text = so.getNameByOption()
+            print(so.getNameByOption())
             return soCell
         }
             
         
         return cell
         
-        
             
     }
     
-    func getNameByOption(so: SearchOptions) -> String {
-        switch so {
-        case .subject:
-            return "Subject"
-        case .classID:
-            return "Class ID"
-        case .name:
-            return "Class Name"
-        case .profs:
-            return "Professors"
-        case .course:
-            return "Course Name"
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? SearchOptionCell {
+            searchOptions[SearchOptions(rawValue: indexPath.item)] = !searchOptions[SearchOptions(rawValue: indexPath.item)]
+            print(filteredSections[indexPath.item].selected)
+            cell.checkLabel.isHidden = !filteredSections[indexPath.item].selected
+            
         }
     }
+
     
 }

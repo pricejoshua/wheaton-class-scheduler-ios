@@ -17,6 +17,21 @@ enum SearchOptions: Int, CaseIterable {
     case name
     case profs
     case course
+    
+    func getNameByOption() -> String {
+        switch self {
+        case .subject:
+            return "Subject"
+        case .classID:
+            return "Class ID"
+        case .name:
+            return "Class Name"
+        case .profs:
+            return "Professors"
+        case .course:
+            return "Course Name"
+        }
+    }
 }
 
 class FiltersSelectedOptions {
