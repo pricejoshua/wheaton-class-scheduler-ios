@@ -12,15 +12,20 @@ class FiltersViewController: UIViewController {
     var filters: FiltersSelectedOptions!
     var delegate: FilterOptionsDelegate!
     
-    var searchOptions: [SearchOptions: Bool] = [.subject: false, .course: false, .profs: false, .classID: false, .name: true]
+    var searchOptions: [SearchOptions: Bool]!
     
     @IBOutlet weak var searchOptionsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        filters = FiltersSelectedOptions(searchBy: [.subject: false, .course: false, .profs: false, .classID: false, .name: true], tags: [], term: CoursesDataModel.coursesDataModel.currentTerm)
+        if filters == nil {
+            filters = FiltersSelectedOptions(searchBy: [.subject: false, .course: false, .profs: false, .classID: false, .name: true], tags: [], term: CoursesDataModel.coursesDataModel.currentTerm)
+        } else if filters.searchBy == nil {
+            filters.searchBy = [.subject: false, .course: false, .profs: false, .classID: false, .name: true]
+        }
         
+        searchOptions = filters.searchBy
         // Do any additional setup after loading the view.
     }
     
@@ -38,6 +43,12 @@ class FiltersViewController: UIViewController {
                 destVC.delegate = self
             }
         }
+    }
+    
+    
+    @IBAction func applyButton(_ sender: Any) {
+        delegate?.filterOptionsDidUpdate(selectedOptions: filters)
+        navigationController?.popViewController(animated: true)
     }
     
 
@@ -61,20 +72,18 @@ class SearchOptionCell: UITableViewCell {
 
 extension FiltersViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(SearchOptions.allCases.count)
         return SearchOptions.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchOptionCell", for: indexPath)
-        print(cell)
         if let soCell = cell as? SearchOptionCell {
             let so  = SearchOptions(rawValue: indexPath.row)!
-            print(so)
             soCell.searchOptionLabel.text = so.getNameByOption()
-            print(so.getNameByOption())
+            soCell.checkLabel.isHidden = !searchOptions[so]!
             return soCell
         }
+        tableView.deselectRow(at: indexPath, animated: true)
             
         
         return cell
@@ -84,10 +93,11 @@ extension FiltersViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? SearchOptionCell {
-            searchOptions[SearchOptions(rawValue: indexPath.item)] = !searchOptions[SearchOptions(rawValue: indexPath.item)]
-            print(filteredSections[indexPath.item].selected)
-            cell.checkLabel.isHidden = !filteredSections[indexPath.item].selected
-            
+            print(SearchOptions(rawValue: indexPath.item)!, searchOptions[SearchOptions(rawValue: indexPath.item)!])
+            searchOptions[SearchOptions(rawValue: indexPath.item)!] = !searchOptions[SearchOptions(rawValue: indexPath.item)!]!
+            print(SearchOptions(rawValue: indexPath.item)!, searchOptions[SearchOptions(rawValue: indexPath.item)!])
+            cell.checkLabel.isHidden = !searchOptions[SearchOptions(rawValue: indexPath.item)!]!
+            filters.searchBy = searchOptions
         }
     }
 

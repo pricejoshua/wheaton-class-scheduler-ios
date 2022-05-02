@@ -37,6 +37,8 @@
 		C875E0C228198D2500FB9569 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875E0C128198D2500FB9569 /* FiltersViewController.swift */; };
 		C875E0C42819934700FB9569 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875E0C32819934700FB9569 /* TagsViewController.swift */; };
 		C875E0C82819941500FB9569 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875E0C72819941500FB9569 /* TagTableViewCell.swift */; };
+		C8A3147E28204A23008ED9C7 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3147C28204A23008ED9C7 /* TagCollectionViewCell.swift */; };
+		C8A3147F28204A23008ED9C7 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8A3147D28204A23008ED9C7 /* TagCollectionViewCell.xib */; };
 		C8E6F24D28185DE40036A6A8 /* classes.cache.json in Resources */ = {isa = PBXBuildFile; fileRef = C8E6F24C28185DE30036A6A8 /* classes.cache.json */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		C875E0C128198D2500FB9569 /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		C875E0C32819934700FB9569 /* TagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
 		C875E0C72819941500FB9569 /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
+		C8A3147C28204A23008ED9C7 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		C8A3147D28204A23008ED9C7 /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
 		C8CFA57627DFBBAE00C0D709 /* WheatonClassScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheatonClassScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E6F24C28185DE30036A6A8 /* classes.cache.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = classes.cache.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +193,8 @@
 				C80E0E91281742B80044790E /* CourseViewCell.xib */,
 				C80E0E90281742B80044790E /* CourseViewCell.swift */,
 				C875E0C72819941500FB9569 /* TagTableViewCell.swift */,
+				C8A3147C28204A23008ED9C7 /* TagCollectionViewCell.swift */,
+				C8A3147D28204A23008ED9C7 /* TagCollectionViewCell.xib */,
 			);
 			path = "Cell Views";
 			sourceTree = "<group>";
@@ -272,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C80E0E89281716F30044790E /* ClassEventCell.xib in Resources */,
+				C8A3147F28204A23008ED9C7 /* TagCollectionViewCell.xib in Resources */,
 				C853574B280754E400EF12C9 /* Main.storyboard in Resources */,
 				C8535749280754E400EF12C9 /* Assets.xcassets in Resources */,
 				C853574A280754E400EF12C9 /* LaunchScreen.storyboard in Resources */,
@@ -331,6 +338,7 @@
 			files = (
 				C8535757280754E400EF12C9 /* AppDelegate.swift in Sources */,
 				C842B3B3281A242D00C4A10D /* WheatonClassSchedluer.xcdatamodeld in Sources */,
+				C8A3147E28204A23008ED9C7 /* TagCollectionViewCell.swift in Sources */,
 				C80E0E8D281724090044790E /* MyJZCalendarViews.swift in Sources */,
 				C80E0E9B281769B80044790E /* CourseData.swift in Sources */,
 				C80E0E9D28176B7E0044790E /* CoursesDataModel.swift in Sources */,

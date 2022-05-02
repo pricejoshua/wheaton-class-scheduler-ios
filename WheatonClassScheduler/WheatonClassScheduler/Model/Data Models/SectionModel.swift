@@ -125,6 +125,22 @@ class SectionModel: Codable {
         return course.attributes.joined(separator: " ")
     }
     
+//    func getTags() -> [String] {
+//        return course.attributes
+//    }
+    
+    func getTags() -> [String] {
+        return course.attributes.map({ a -> String in
+            if a != ClassAttribute.noAttributeInformationAvailable.rawValue {
+                let str = a.split(separator: " ").last
+                return String(str!)
+            }
+            return ""
+        }).filter { s in
+            return s != ""
+        }
+    }
+    
     func isTerm(term: String) {
         
     }

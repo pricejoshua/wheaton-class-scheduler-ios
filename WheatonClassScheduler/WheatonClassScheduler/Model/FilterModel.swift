@@ -23,13 +23,13 @@ enum SearchOptions: Int, CaseIterable {
         case .subject:
             return "Subject"
         case .classID:
-            return "Class ID"
+            return "Class Number"
         case .name:
             return "Class Name"
         case .profs:
             return "Professors"
         case .course:
-            return "Course Name"
+            return "Course ID"
         }
     }
 }
@@ -43,7 +43,7 @@ class FiltersSelectedOptions {
     }
     
     
-    var searchBy: [SearchOptions: Bool]
+    var searchBy: [SearchOptions: Bool]!
     var tags = [String]()
     var term: String = ""
 

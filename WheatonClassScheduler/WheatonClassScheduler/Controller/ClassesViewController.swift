@@ -26,6 +26,12 @@ class ClassesViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         // testSections()
+
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         classCollectionView.dataSource = self
         classCollectionView.delegate = self
         
@@ -38,7 +44,10 @@ class ClassesViewController: UIViewController {
         
         searchBar.delegate = self
         filteredSections = courseDataModel.getSections()
-        filterOptions = FiltersSelectedOptions(searchBy: [.subject: false, .course: false, .profs: false, .classID: false, .name: true], tags: [], term: CoursesDataModel.coursesDataModel.currentTerm)
+        
+        if filterOptions == nil {
+            filterOptions = FiltersSelectedOptions(searchBy: [.subject: false, .course: false, .profs: false, .classID: false, .name: true], tags: [], term: CoursesDataModel.coursesDataModel.currentTerm)
+        }
     }
     
     func changeTerms(term: String) {
@@ -50,6 +59,7 @@ class ClassesViewController: UIViewController {
             if searchText != "" {
                 filteredSections = []
                 for s in courseDataModel.getSections() {
+                    print(filterOptions!)
                     if s.getSearchTerms(searchOptions: filterOptions.searchBy).lowercased().contains(searchText.lowercased()) {
                         filteredSections.append(s)
                     }
@@ -89,7 +99,12 @@ class ClassesViewController: UIViewController {
         // Pass the selected object to the new view controller.
         
         if segue.identifier == "toFiltersViewController" {
-            print()
+            if let dest = segue.destination as? FiltersViewController {
+                dest.delegate = self
+                dest.filters = filterOptions
+                print(dest.filters)
+                
+            }
         }
     }
     
@@ -112,6 +127,7 @@ extension ClassesViewController: UICollectionViewDataSource {
             cell.courseIDLabel.text = section.subject + " " + section.classID
             cell.profLabel.text = section.profs.first
             cell.checkLabel.isHidden = !section.selected
+            cell.tags = section.getTags()
             return cell
         }
         preconditionFailure()
@@ -159,7 +175,7 @@ extension ClassesViewController: CourseDataDelegate {
 
 extension ClassesViewController: FilterOptionsDelegate {
     func filterOptionsDidUpdate(selectedOptions: FiltersSelectedOptions) {
-        filterOptions = selectedOptions
+        self.filterOptions = selectedOptions
         filter()	
         classCollectionView.reloadData()
     }

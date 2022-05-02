@@ -141,14 +141,23 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="☑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NtY-o3-uem">
+                                                    <rect key="frame" x="319" y="11.5" width="15" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="A3h-dt-1BR" secondAttribute="trailing" constant="20" id="Pw0-36-qSm"/>
                                                 <constraint firstItem="A3h-dt-1BR" firstAttribute="leading" secondItem="Uxw-U2-5Ft" secondAttribute="leadingMargin" constant="20" id="cF6-Jt-HMn"/>
+                                                <constraint firstItem="NtY-o3-uem" firstAttribute="centerY" secondItem="Uxw-U2-5Ft" secondAttribute="centerY" id="dsg-8w-7gV"/>
+                                                <constraint firstItem="NtY-o3-uem" firstAttribute="trailing" secondItem="Uxw-U2-5Ft" secondAttribute="trailingMargin" id="j4D-T5-bOO"/>
                                                 <constraint firstItem="A3h-dt-1BR" firstAttribute="centerY" secondItem="Uxw-U2-5Ft" secondAttribute="centerY" id="s1d-lb-Pyu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="checkLabel" destination="NtY-o3-uem" id="ezq-SY-C8L"/>
                                             <outlet property="searchOptionLabel" destination="A3h-dt-1BR" id="IhH-S2-x2s"/>
                                         </connections>
                                     </tableViewCell>
@@ -169,7 +178,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="A8M-rD-jSI">
-                        <barButtonItem key="rightBarButtonItem" title="Apply" id="Mni-46-cMY"/>
+                        <barButtonItem key="rightBarButtonItem" title="Apply" id="Mni-46-cMY">
+                            <connections>
+                                <action selector="applyButton:" destination="EeB-J1-3yg" id="NcO-b9-Xfp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchOptionsTableView" destination="4c9-SA-6ca" id="Py3-Me-hSf"/>

@@ -88,6 +88,10 @@ class CourseData {
                 if (courses[c.termID] == nil) {
                     courses[c.termID] = [CourseModel]()
                 }
+                
+           
+            
+                
                 courses[c.termID]?.append(CourseModel(termID: c.termID, subject: c.subject, classID: c.classID, name: c.name, attributes: c.classAttributes, sections: []))
 //                if let foo = array.first(where: {$0.name == "foo"}) {
 //                   // do something with foo
@@ -122,6 +126,8 @@ class CourseData {
                 if (sections[s.termID] == nil) {
                     sections[s.termID] = [SectionModel]()
                 }
+                
+
                 if let course = coursesDataModel.getCourseById(term: s.termID, subject: s.subject, classID: s.classID){
                     sections[s.termID]?.append(SectionModel(meetingTimes: meetings, seatsCapacity: s.seatsCapacity, seatsRemaining: s.seatsRemaining, waitCapacity: s.waitCapacity, waitRemaining: s.waitRemaining, profs: s.profs, location: location, crn: s.crn, course: course))
                 }
